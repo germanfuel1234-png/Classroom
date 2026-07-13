@@ -1,0 +1,15 @@
+Trabajo Practico Numero 6.-Rol 
+[Página 1]
+Materia:Sist. Operativos   Prof.Rodriguez G.  
+ 
+Trabajo Practico Numero 6  
+El rol del sistema operativo  
+Consigna:  
+Responde brevemente:  
+1. ¿Qué tareas realiza un sistema operativo?  
+2. ¿Por qué se lo considera el “intermediario” entre el hardware y el usuario?  
+3. ¿Qué ocurriría si una computadora no t uviera un sistema operativo?  
+Preguntas adicionales:  
+4. Explica con un ejemplo cómo el sistema operativo gestiona los recursos de hardware.  
+5. ¿Qué diferencia hay entre un sistema operativo de escritorio y uno embebido (por 
+ejemplo, en un router o electrodo méstico)?

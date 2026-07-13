@@ -1,0 +1,11 @@
+{
+  "estado": "Rehacer",
+  "nota": 1,
+  "motivo": "Entrega no pertinente (validación IA). La entrega aborda las dos primeras partes de la consigna (pseudocódigo para mostrar edad con condición mayor/menor y carteles de edad por rangos, y la ficha del usuario), aunque con algunas inconsistencias menores en la implementación de rangos de edad y el uso de todas las variables de la ficha. Sin embargo, la sección completa sobre 'LA LOTERIA!' está totalmente ausente de la entrega, lo cual representa una omisión crucial de una parte fundamental de la actividad.",
+  "feedback": "La entrega no corresponde de forma directa a la consigna del TP. Por favor, rehace y vuelve a subir una resolución específica de la actividad solicitada.",
+  "alumno": "Agustina Calderon",
+  "materia": "Materia_796497247565",
+  "actividad": "Actividad Numero 4(Pseudocódigo-sì)",
+  "archivos_descargados": 2,
+  "fecha": "2026-06-18T09:16:37.173959"
+}

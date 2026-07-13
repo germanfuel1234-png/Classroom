@@ -1,0 +1,9 @@
+[
+  {
+    "alumno": "german rodriguez",
+    "link": "https://classroom.google.com/c/ODUxMDE4MzYwNTg2/a/ODUxMDE4MzYwNjI1/submissions/by-status/and-sort-last-name/student/MjA4Mzk3NTc1Mzha",
+    "nota": 1,
+    "comentario_privado": "No se ha recibido entrega para esta actividad. Por favor, sube tu trabajo en Classroom.",
+    "error_api": "<HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/851018360625/studentSubmissions/Cg0I4u2V0U0Qsc6WpeIY?updateMask=draftGrade&alt=js"
+  }
+]

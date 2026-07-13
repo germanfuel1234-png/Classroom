@@ -1,0 +1,228 @@
+╔══════════════════════════════════════════════╗
+║  CONSIGNA DE REFERENCIA PARA EVALUACIÓN     ║
+╚══════════════════════════════════════════════╝
+
+MATERIA: Materia_851018360586
+ACTIVIDAD: Trabajo Practico N°1.4
+FECHA DESCARGA: 2026-06-17 20:35:08
+
+======================================================================
+
+[CONTENIDO EXTRAÍDO AUTOMÁTICAMENTE DE CLASSROOM]
+
+Trabajo Practico N°1.4
+Componentes mínimos de un sistema operativo
+[Página 1]
+Tema 4: Estructura de un sistema operativo – Componentes mínimos de un sistema operativo  
+ 
+ESTRUCTURA (ARQUITECTURA)  DE UN SISTEMA OPERATIVO  
+ 
+El sistema operativo se divide lógicamente en pequeños módulos y se crea una interfase bien  
+definida para cada módulo. Para esto se debe definir e interrelacionar cuidadosamente su función, 
+sus entradas y sus salidas.  
+Generalmente cuando se mencionan las estructuras de los sistemas operativos  se refieren a la 
+forma en que se organizan los distintos módulos componen tes del mismo, en estratos o  niveles. 
+Básicamente los sistemas operativos  tienen dos interfases: una con el Hardware (llamada Kernel  o 
+Núcleo), y  otra con los usuarios y sus programas (llamada Shell ). 
+Presentaremos las siguientes cuatro estructuras (tambié n llamadas Arquitecturas de sistemas 
+operativos  
+ Estructura Monolítica  
+ Estructura  Jerárquica  o en capas  
+ Estructura  de Microkernel  
+ Estructura Cliente / Servidor  
+ Máquinas virtuales  
+ Estructura  de Exokernel  
+ 
+ESTRUCTURA MONOLÍTICA  
+Es la estructura de los primeros SO constituidos fundamentalmente por un solo programa 
+compuesto de un conjunto de rutinas entrelazadas de tal forma que cada una puede llamar a 
+cualquier otra . 
+Cuando se utiliza esta técnica, cada procedimiento en el sistema tiene la libertad de l lamar a 
+cualquier otro, si éste proporciona cierto cómputo útil que el primero necesita. Al tener miles de 
+procedimientos que se pueden llamar entre sí sin restricción, con frecuencia se produce un sistema 
+poco manejable y difícil de comprender  
+ 
+Los sigui entes puntos caracterizan a esta estructura:  
+ Interfases y niveles de funcionalidad no están bien separadas.  
+ No tienen estructura interna definida. Ejemplo: Aplicaciones pueden acceder a rutinas  
+básicas de E/S para escribir directamente en la pantalla y unidades de disco.  
+ El sistema operativo  es un conjunto de rutinas que se llaman entre sí libremente.  
+ No existe modularización, ni ocultamiento de la información.  
+ Difícil la reconfiguración y actualización.  
+ Carecen de protecciones y privilegios.  
+ Existe una  mínima estructura. Servicios del sistema se piden a través de llamadas 
+especiales ( supervisor call o System call ).
+
+[Página 2]
+Entre los sistemas operativos que implementan la arquitectura monolítica se pueden citar:  
+ MS-DOS,  
+ Las primeras versiones de UNIX  
+ La mayoría de los Sistemas Operativos para micro -computadoras.  
+ 
+ 
+El Kernel proporciona  la planificación del procesador y otras funciones del sistema operativo 
+mediante las llamadas al sistema que utilizan  los programas del usuario cuando se ejecutan.  
+ 
+MS-DOS se escribió para el procesador Intel 8088. No ofrece modo dual de operación ni  protección 
+del hardware. Los diseñadores tuvieron que dejar accesible el hardware base. Fue  diseñado e 
+implantado por unas cuantas personas que no tenían la menor idea de  la popularidad que tendría. 
+Se escribió para lograr la mayor funcionalidad en el menor espacio.  
+ 
+El UNIX original, inicialmente estaba limitado por la funcionalidad del hardware. Éste se  encuentra 
+divido en dos partes una de ellas comprende los programas del sistema y la otra el  kernel. El kernel 
+se encuentra divido en drivers de dispositivos y en las interfaces  
+ 
+ 
+ESTRUCTURA EN ESTRATOS O JERÁRQUICA  
+ 
+El sistema es dividido en módulos, utilizando un “enfoque por capas ”, que separa al sistema 
+operativo  en varias capas  (niveles), cada una construida sobre las inferiores. Donde cada capa 
+constituye una implantación de un  objeto abstracto que contiene datos y operaciones. Estas 
+operaciones solo pueden manipular los datos  en ese nivel.  
+ 
+ 
+ 
+Cada parte del si stema operativo se encarga de una  función. Cuando la función X necesita de la 
+función Y  pedirá al sistema operativo ayuda, de esta forma se  evita la interdependencia de todas 
+las funciones (como  ocurría en el sistema monolítico) Esta característica de  la estructura permite la 
+modificación de una función o  parte determinada sin tocar las demás. También se pueden añadir 
+más módulos sin tener  que modificar la estructura básica.  
+ 
+Ventajas :
+
+[Página 3]
+ Facilita la protección. Cada capa consiste en alguna estructura de datos y un conjunto de 
+rutinas  que pueden ser invocadas por las capas de niveles superiores y a la vez esa capa 
+invocar  operaciones de capas inferiores (las rutinas no se invocan libremente y sin orden 
+como en la  estructura monolítica).  
+ Permite implementar  el principio de ocultamiento de la información (information hiding ), que 
+facilita  a los programadores realizar rutinas de bajo nivel, siempre que las interfases externas  
+permanezcan sin cambios y la rutina lleve a cabo la tarea indicada.  
+ Modularización: Facilita la sustitución y verificación de componentes. Las capas se 
+seleccionan  de manera que cada una utilice funciones (operaciones), y servicios de las 
+capas inferiores. Así se  logra la depuración de todo el sistema.  El primer nivel se depura sin  
+preocuparse por el resto del sistema ya que solo utiliza el hardware. Se pasa al segundo 
+nivel pues se sabe que el primero fue depurado y está correcto. Si aparece algún error, debe 
+ser del  nivel que se está depurando pues los inferiores ya no presentan er rores.  
+ 
+Desventajas : 
+ 
+ La definición de los distintos niveles es difícil. Se debe realizar una planificación cuidadosa.  
+ Algunas comunicaciones son entorpecidas por la jerarquía. Por ej.: si la administración de 
+la CPU necesita un acceso a disco se encuentra  en un nivel inferior al administrador de 
+Entrada - Salida, entonces debe pasar por los servicios de otros administradores que se 
+encuentran en el medio.  
+ Son más lentos.  
+ 
+El primer sistema construido de esta forma fue el sistema THE, construido en Technische 
+Hogeschool Eindhoven en Holanda por E. W. Dijkstra (1968) y sus estudiantes  
+El sistema THE era un sistema simple de procesamiento por lotes para una computadora holandesa, 
+la Electrologica X8, que tenía 32K de palabras de 27 bits (los bits eran costosos en aquel entonce s). 
+Dispone de una estructura jerárquica  de seis capas  totalmente ordenada en la  que cada nivel sólo 
+puede acceder al nivel inferior más inmediato . 
+ 
+ 
+ 
+ 
+ 
+Otro ejemplo lo constituye el sistema operativo  OS/2, un descendiente directo del MS -DOS, el cual 
+fue creado para superar las limitaciones de éste y agregar multitarea y operación de modo dual, etc. 
+Al adicionar complejidad y tener un hardware mucho más potente se implantó al sistema operativo  
+en forma  de capas.
+
+[Página 4]
+Otra forma de representar muy similar a ésta, es la denominada anillos concéntricos  (rings ), 
+basados  en: 
+ 
+ Cada ring tiene una apertura ( trap), por donde se accede desde las capas superiores a las  
+inferiores.  
+ Las capas internas son más privilegiadas en protección que las externas  
+ 
+ 
+ 
+La solución actual de los sistemas operativos  de estructuras jerárquicas es diseñar menos capas 
+pero con  mayor funcionalidad, ofreciendo las mayorías de las ventajas del código modularizado a 
+la vez que se  evitan los difíciles problemas de la definición e interacción de las capas  
+ 
+ 
+Los niveles de jerarquía pueden definirse utilizando un método descendente Top Down (cuando  se 
+conoce el problema), o ascendente Bottom Up (cuando no se dispone de una definición exacta del  
+problema o no se dispone de la máquina sobre la que se va ejecutar el sistema operativo ). 
+ 
+ 
+ESTRUCTURA DE MICROKERNELS  
+ 
+La arquitectura de microkernel , desarrollada por Andre Tanembaum,  y su paradigma tuvo una gran 
+relevancia académica durante los años ochenta y principios de los noventa, dentro de lo que se 
+denominó “ self healing computing ”, es decir, sistemas independientes que fuesen capaces de 
+superar por si mismos errores de software o de hardware. En un principio pretendió ser una solución  
+a la creciente complejidad de los sistemas operativos pero en realidad es más compleja que la 
+arquitectura con kernel monolítico, ya que no es posible compartir y organizar toda la memoria 
+principal al mismo tiempo, por lo tanto usa técnicas más complejas  y sofisticadas para el manejo de 
+memoria.
+
+[Página 5]
+La arquitectura de microkernel provee un conjunto de primitivas o llamadas al sistema mínimas, 
+para implementar servicios básicos como espacios de direcciones, comunicación entre procesos y 
+planificación básica.  
+Todos los otros servicios (gestión de memoria, sistema de archivos, operaciones de E/S, etc.), que 
+en general son provistos por el núcleo, se ejecutan como procesos servidores en espacio de usuario 
+(llamadas y servicios que NO son básicas).  
+Esta arquitectu ra se basa en un kernel más pequeño que el kernel monolítico, está programado en 
+forma modular y realiza operaciones más básicas, lo que le brinda al sistema mayor flexibilidad, 
+mejor control ante errores o fallos (un fallo en una parte del sistema no lo c olapsaría por completo), 
+mayores facilidades para desarrollar y depurar controladores de dispositivos, pero en general tiene 
+una mayor complejidad en el código, en la sincronización de todos los módulos que componen el 
+microkernel y su acceso a memoria pri ncipal, la anulación de las ventajas de “Zero Copy”, la 
+integración con las aplicaciones y sus detractores (especialmente Linus Torvaslds) indican que su 
+rendimiento es mucho en menor.  
+Como los procesadores y arquitecturas modernas de hardware están optimi zadas para sistemas de 
+kernel que pueden mapear toda la memoria. Esto mejora la tolerancia a fallos y eleva la portabilidad 
+entre plataformas de hardware.  
+El microkernel se encarga de la planificación de todo el código que se ejecuta en el sistema 
+mediante  hilos (theards) y no mediante procesos, esto le permite realizar varias tareas 
+simultáneamente. Toda tarea pasa por el microkernel, lo cual hace al sistema operativo mas seguro 
+que un sistema operativo con arquitectura de kernel monolítica, ya que si el q ue solicita hacer la 
+tarea no posee los permisos necesarios el microkernel no se la deja realizar.  
+Alguna de las tareas que realiza el microkernel son:  
+ Manejo de las interrupciones en el sistema desde los periféricos  
+ Manejo de las excepciones del procesado r. 
+ Proporciona soporte para la recuperación del sistema ante un apagado irregular o corte 
+de energía.  
+ 
+Las ventajas   
+ 
+ Hace más flexible al sistema operativo al utilizar solo los módulos necesarios para que 
+se ejecuten los procesos,  
+ Permite multitarea,  
+ Es más seguro  y controla errores fácilmente  
+ 
+Desventajas:  
+ 
+ Bajo rendimiento, debido que la comunicación es a través de mensajes que no es eficiente 
+como son las llamadas al sistema.  
+ 
+Ejemplos de sistemas operativos  que funcionan o funcionaron bajo esta estructura  
+ 
+Entre los sistemas operativos que implementan la arquitectura de microkernel se pueden citar: 
+Minix, QNX , AIX, AmigaOS, Integrity , Amoeba, PikeOS , SimbOS, La familia de microkernel L4Linux , 
+SO3, RadiOS, MorphOS, Netkernel, Singularity , K42, HURD ; BeOS, Coyotos , y el microkernel 
+Mach , usado en GNU  Hurd  y en Mac OS X
+
+[Página 6]
+ESTRUCTURA CLIENTE / SERVIDOR  
+ 
+Una ligera variación de l a idea del microkernel es diferenciar dos clases de procesos: los 
+servidores , cada uno de los cuales proporciona cierto servicio, y los clientes , que utilizan estos 
+servicios. Este modelo se conoce como cliente -servidor.  
+A menudo la capa inferior es un microkernel, pero eso no es requerido. La esencia es la presencia 
+de procesos cliente y procesos servidor. La comunicación entre clientes y servidores se lleva a cabo 
+comúnmente mediante el paso de mensajes. Para obtener un servicio, un proceso cliente construye 
+un mensaje indicando lo que desea y lo envía al servicio apropiado. Después el servicio hace el 
+trabajo y envía de vuelta la respuesta. Si el cliente y el servidor se ejecutan en el mismo equipo se 
+pueden hacer cierta s opt
+
+======================================================================
+⚠️  NOTA: Si la consigna anterior está incompleta o solo contiene URLs,
+   edita este archivo manualmente para mejorar la descripción.
+   Esto mejorará la consistencia de las evaluaciones automáticas.

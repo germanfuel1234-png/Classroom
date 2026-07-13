@@ -1,0 +1,15 @@
+precio=float(input("Ingrese precio de un producto...\n"))
+if precio<=0:
+    print(f"El precio no puede ser menor o igual a 0")
+
+metodo=int(input("Ingrese 1 para pagar en efectivo, ingrese 2 para pagar en tarjeta.\n"))
+
+if metodo==1:
+    print(f"Pago concretado en efectivo.")
+
+elif metodo==2:
+    print(f"Pago con tarjeta...\n")
+    input("Ingrese numero de la tarjeta...\n")
+
+else:
+    print(f"El numero no es el indicado por el programa.")

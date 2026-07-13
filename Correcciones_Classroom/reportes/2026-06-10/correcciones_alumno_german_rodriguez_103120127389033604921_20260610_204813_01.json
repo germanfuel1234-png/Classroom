@@ -1,0 +1,13 @@
+{
+  "nombre": "german rodriguez",
+  "feedback": "El archivo adjunto no permite la lectura automática de contenido (posible escaneo o imagen no procesable). Te solicito que re-entregues el trabajo en formato de texto legible (Word .docx, Google Docs o archivo .txt).",
+  "estado": "Revisión manual requerida",
+  "estado_entrega": "TURNED_IN",
+  "nota": 4,
+  "motivo": "No se pudo extraer el texto del archivo adjunto. Parece ser un PDF escaneado o una imagen. Requiere inspección humana.",
+  "user_id": "103120127389033604921",
+  "submission_id": "Cg0I4u2V0U0Q6O2hm6AZ",
+  "alternate_link": "https://classroom.google.com/c/ODY3NjQwMDY5MDYw/a/ODY3NjQwNTcxNjI0/submissions/by-status/and-sort-last-name/student/MjA4Mzk3NTc1Mzha",
+  "student_id": "103120127389033604921",
+  "alumno_id": "103120127389033604921"
+}

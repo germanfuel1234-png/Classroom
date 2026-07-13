@@ -1,0 +1,19 @@
+MATERIA: Materia_796518931347
+ACTIVIDAD: Trabajo Practico Numero 6(Memoria RAM)
+FECHA DESCARGA: 2026-06-17 19:59:19
+======================================================================
+
+Trabajo Practico Numero 6(Memoria RAM)
+Trabajo Practico N°6
+“Memorias”
+¿Qué tipos de memorias existen en una computadora?
+¿Cuál es la función de las memorias ram en un dispositivo?
+¿Cuál es la función de la memoria rom en un equipo?
+¿Qué es la latencia en las RAM?
+¿Cuál es la velocidad de las RAM y que medidas utilizan?
+¿Las RAM tienen voltaje?
+¿Que es la Memoria ram dimm y so-dimm?
+¿Existen las memorias ram soldadas a la placa?
+¿A que nos referimos con el bus de datos dual channel y qual challen?
+Nombre la evolución de las DDR.
+¿Existen las compatibilidades en las ram?

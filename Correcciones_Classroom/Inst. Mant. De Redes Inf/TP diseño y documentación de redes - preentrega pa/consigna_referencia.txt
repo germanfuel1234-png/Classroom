@@ -1,0 +1,6 @@
+La 2da. parte incluye:
+- Informe de la primera parte completo y corregido.
+- Topología lógica.
+- Diario de ingeniería (diagrama de Gantt).
+- Mapa de nodos.
+- Resumen de direcciones.

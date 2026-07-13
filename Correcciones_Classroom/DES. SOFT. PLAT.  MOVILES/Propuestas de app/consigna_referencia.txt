@@ -1,0 +1,6 @@
+En las próximas clases estaremos desarrollando aplicaciones utilizando . Es una excelente herramienta para comprender la lógica de la programación y la creación de apps de manera visual.
+  
+-Si ya dominan otro lenguaje de programación y prefieren desarrollar la aplicación con él, ¡pueden hacerlo! 
+Lo importante es demostrar la funcionalidad de la app.
+
+-realizar todas las aplicaciones "propuestas app"

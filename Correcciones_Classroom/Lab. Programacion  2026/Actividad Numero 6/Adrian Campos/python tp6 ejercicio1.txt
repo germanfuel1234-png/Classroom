@@ -1,0 +1,8 @@
+turismos=float(input("Ingrese el consumo de turismos\n"))
+capturismos=float(input("Ingrese el consumo de capturismos\n"))
+todoterrenos=float(input("Ingrese el consumo de todoterrenos\n"))
+captodot=float(input("Ingrese el consumo de captodot\n"))
+
+necesidadescom= (turismos*capturismos)+todoterrenos*captodot
+
+print(f"El consumo total es de {necesidadescom}")

@@ -1,0 +1,10 @@
+MATERIA: Materia_796518931347
+ACTIVIDAD: Actividad Numero 7(Armar una pc)
+FECHA DESCARGA: 2026-06-17 20:00:19
+======================================================================
+
+Actividad Numero 7(Armar una pc)
+Actividad Numero 7
+“Armado de pc”
+Armar una computadora con el simulador de armado de pc.
+Armar una pc con componentes reales.

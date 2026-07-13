@@ -1,0 +1,49 @@
+╔════════════════════════════════════════════════════════════╗
+║  TRABAJO PRÁCTICO: Gestión de Procesos en Sistemas Operativos
+╚════════════════════════════════════════════════════════════╝
+
+OBJETIVO:
+Comprender cómo el sistema operativo gestiona procesos, threads, prioridades
+y recursos del sistema.
+
+CONTENIDO REQUERIDO:
+1. Concepto de Proceso vs Thread
+   - Definición clara de cada uno
+   - Diferencias fundamentales
+   - Ejemplos prácticos del SO actual
+
+2. Estados de un Proceso
+   - Nuevo, Listo, Ejecutándose, Bloqueado, Terminado
+   - Diagrama de transiciones
+   - Cuándo ocurre cada cambio
+
+3. Planificación de Procesos
+   - Algoritmos: FIFO, Round Robin, Prioridades
+   - Ventajas y desventajas de cada uno
+   - Caso de uso real
+
+4. Deadlock (Interbloqueo)
+   - Condiciones necesarias
+   - Ejemplo de deadlock en sistema real
+   - Estrategias de prevención
+
+5. Experiencia práctica
+   - Captura de pantalla de Task Manager/Monitor del sistema
+   - Analizar procesos en ejecución
+   - Cambiar prioridades de un proceso
+   - Incluir explicación de lo observado
+
+FORMATO:
+- Documento PDF o DOCX
+- Mínimo 2000 palabras
+- Incluir diagramas
+- Mínimo 3 capturas de pantalla anotadas
+- Referencias bibliográficas
+
+CRITERIOS DE EVALUACIÓN:
+✓ Completitud: Responde todas las preguntas
+✓ Profundidad: Análisis detallado de cada tema
+✓ Claridad: Explicación comprensible
+✓ Diagramas: Esquemas claros y bien rotulados
+✓ Evidencia: Capturas reales del sistema
+✓ Referencias: Cita autores y fuentes

@@ -1,0 +1,7 @@
+#Programa para decir si un numero par o impar
+num=int(input("Ingresá un número...\n"))
+if num % 2 == 0:
+    print(f"Este número es par.")
+else:
+    print(f"Este número no es par.")
+#Gracias por ver

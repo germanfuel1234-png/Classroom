@@ -1,0 +1,7 @@
+#Programa para ingresar dos numeros y indicar si uno es divisor del otro
+n1=int(input("Ingrese el primer numero... "))
+n2=int(input("Ingrese el segundo numero... "))
+if (n1%n2)==0:
+    print(f"Estos números son divisores.")
+else:
+    print(f"Estos números no son divisores.")

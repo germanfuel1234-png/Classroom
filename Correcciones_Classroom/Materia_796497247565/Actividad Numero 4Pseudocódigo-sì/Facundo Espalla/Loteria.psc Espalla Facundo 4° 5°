@@ -1,0 +1,42 @@
+Algoritmo Loteria
+	
+	Definir n, ganador, diferencia Como Entero
+	
+	ganador <- 50
+	
+	Escribir "Ingrese el numero:"
+	Leer n
+	
+	diferencia <- n - ganador
+	
+	Si diferencia < 0 Entonces
+		diferencia <- diferencia * (-1)
+	FinSi
+	
+	Si n = ganador Entonces
+		Escribir "¡Felicidades Ganaste la Lotería!"
+	Sino
+		Si diferencia <= 3 Entonces
+			Escribir "CASI GANAS"
+		Sino
+			Si diferencia <= 8 Entonces
+				Escribir "MUY CERCA"
+			Sino
+				Si diferencia <= 15 Entonces
+					Escribir "APROXIMADO"
+				Sino
+					Si diferencia <= 25 Entonces
+						Escribir "POR POCO"
+					Sino
+						Si diferencia <= 40 Entonces
+							Escribir "POR MUCHO"
+						Sino
+							Escribir "MUY ALEJADO"
+						FinSi
+					FinSi
+				FinSi
+			FinSi
+		FinSi
+	FinSi
+	
+FinAlgoritmo

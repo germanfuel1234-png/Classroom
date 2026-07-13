@@ -1,0 +1,411 @@
+╔══════════════════════════════════════════════╗
+║  CONSIGNA DE REFERENCIA PARA EVALUACIÓN     ║
+╚══════════════════════════════════════════════╝
+
+MATERIA: Materia_796497595876
+ACTIVIDAD: Actividad N°6(word-fotocopia)
+FECHA DESCARGA: 2026-06-18 10:55:02
+
+======================================================================
+
+[CONTENIDO EXTRAÍDO AUTOMÁTICAMENTE DE CLASSROOM]
+
+Actividad N°6(word-fotocopia)
+Realizar a la perfección las fotocopias.
+
+PAG 18-27-28
+[Página 1]
+1 
+NTICx 4º Año Secundaria  Profemora Blogspot  Prof. MORA, José  Luis.  
+NTICx 4º Año Secundaria  Versión 1.4         Febrero  2021  Prof. MORA, José  Luis.  
+    
+ 
+ 
+ 
+ 
+E d u c a c i ó n  S e c u n d a r i a  
+ 
+“P o c o  t e x t o  M u c h a  I m a g e n ” 
+P r o f .    M O R A ,  J o s é  L u i s   
+ 
+Versión 1.4              Año  2021  
+ 
+www.profemora.blogspot.com  
+4 º año
+
+[Página 2]
+2 
+NTICx 4º Año Secundaria  Profemora Blogspot  Prof. MORA, José  Luis.  
+NTICx 4º Año Secundaria  Versión 1.4         Febrero  2021  Prof. MORA, José  Luis.  
+  
+ 
+ 
+“Q uie n c ontr ola  los me d ios  de  c omunic a c ión , las 
+imá ge ne s,  c ontr ola  la  c ultur a ” 
+ 
+Allen Ginsberg (  1926 -1997  ) 
+ 
+ 
+ 
+  Este módulo se rige por los contenidos curriculares  de la materia Nuevas 
+Tecnologías de la Información y la Conectividad  ( N.T.I.C.x ) correspondientes al 4º año  de 
+todas las modalidades  del nivel SECUNDA RIO  de la República Argentina.  
+Versión   1.4 :    Se agregaron hipervínculos  hacia información de páginas o videos de internet. 
+Se actualizaron y/o  suprimieron  conceptos de Hardware. Se modificaron , agregaron  y/o cambiaron  
+imágenes . Se mejoró el  TP Nº 8.  Se agregó ejemplo de dato e información.  
+Revisión y corrección :   Javier Hernán , MORA  
+  
+Versión   1.3 :    Se agregaron los temas correspondientes a MULTIMEDIA . Se actualizaron 
+y/o  suprimieron conceptos de Hardware  
+ 
+Versión   1.2.2 :    Se agregaron los temas color en la publicidad , logotipo , isologo,  Isotipo, 
+manipulación publicitaria  y mapas conceptuales.  
+ 
+Versión   1.2.1 :    Se corrigió la redacción de conceptos , se cambiaron imágenes  por otras más 
+didácticas  y se actualizaron referencias hacia software y hardware  correspondiente a la fecha.  
+ 
+Sugerencia s, correcciones, comentarios a…  
+ 
+      Enviar correo electrónico   
+           Mar del Plata,  Prov. Bs. As,  Argentina . 
+Febrero de 2021  
+Este Módulo PUEDE SER REPRODUCIDO  total o parcialmente en cualquier medi o 
+con cualquier  procedimiento, sea fotocopia, microfilmación, mimeógrafo o cualquier sistema 
+mecánico, fotoquímico, electrónico, informático, magnético, electroóptico, etc. Cualquier 
+reproducción DEBE ACOMPAÑAR EL ORIGEN Y SU AUTOR .  
+Prof. MORA, José Luis . 
+ 
+ 
+ 
+ 
+www.profemora.blogspot.com
+
+[Página 3]
+3 
+NTICx 4º Año Secundaria  Profemora Blogspot  Prof. MORA, José  Luis.  
+NTICx 4º Año Secundaria  Versión 1.4         Febrero  2021  Prof. MORA, José  Luis.  
+  
+ 
+M ó du l o 1 :   I nf or má ti ca -c omp u t aci on al  
+ 
+ 
+ 
+ 
+ INFORMÁTICA  
+ 
+La palabra “Informática”  provienen  de  dos  términos: 
+Informació n y automática .  De donde podemos decir que la 
+informática consiste en el tratamiento automático de la información. 
+Resulta entonces importante definir que es la Información.  
+ 
+DATOS E INFORMACIÓN  
+ 
+En sentido general, la información es un conjunto 
+organizad o de datos procesados , que constituyen un mensaje sobre un 
+determinado ente o fenómeno  
+Los datos se  refieren  generalmente  a  situaciones  reales  y se  
+representa  por  medio  de símbolos  (números,  letras,  etc.),  al  ser  
+interpretados  adquieren  significado  y  a  éste  se  lo suele  llama  
+información. No  es  posible  obtener  información  de  un  conjunto  de  
+datos disponibles sin conocer el contexto en el cual éstos adquiere un 
+significado.  
+ 
+ 
+ 
+Por  ejemplo   la  secuencia  numérica  054011423 76060  es  un  
+dato   que  no  tienen  ningún significado  por  si  mismo,  pero  si  
+sumamos guiones y  el  símbolo  054 - 011 - 42376060 esto  nos  está 
+diciendo que es un  nº  de teléfono y además  podemos interpretar  que  
+el  054 es  el código del país , que 011 es el código de área y que 
+42376060 es el número de abonado.  
+Para que un conjunto de datos  puedan crear una información  
+deben estar relacionados entre si con sentido lógic o y dentro de un 
+contexto . 
+  
+TIPOS DE DATOS  
+ 
+Los datos pueden clasificarse según su contenido en:  
+ 
+ A L F A N U M É R IC O S :  Representados por caracteres  de 
+cualquier tipo. ( letras, números, símbolos, etc).  
+ N U M É R IC O S : Contienen solamente  números.  
+ IM Á G E N E S : Tienen  dibujos, esquemas, fotos, diagramas, etc.  
+ S O N ID O S : Representados por ruidos,  tonos, etc.  
+ 
+  
+ 
+ 
+ 
+  
+ 
+EL SEMÁFORO  
+ Tiene 2 estados 
+básicos: el ROJO  y el 
+VERDE . El amarillo es 
+una señal del cambio de 
+estado que se va a pro -
+ducir.  
+VERDE  indica posi -
+bilidad de avanzar y 
+ROJO  detenerse.  
+N º  D E  C U I L  
+ 
+20-18444666 -1 
+ 
+Código Único de Iden-
+tificación Laboral . 
+Da INFORMACIÓN  
+sobre el sexo, 20 
+hombre, ( mujer es 27 ), 
+el Nº de D .N.I. y la 
+última cifra ( en este 
+caso 1 ) el código de 
+verificación .
+
+[Página 4]
+4 
+NTICx 4º Año Secundaria  Profemora Blogspot  Prof. MORA, José  Luis.  
+NTICx 4º Año Secundaria  Versión 1.4         Febrero  2021  Prof. MORA, José  Luis.  
+  
+CONCEPTOS BASE DE LAS MODERNAS COMUNICACIONES  
+. 
+ 
+COMPUTACIÓN     es el 
+estudio de los fundamentos teóricos de la 
+información y el cómputo , así como las 
+técnicas prácticas para sus implemen -
+taciones y aplicación en sistemas de cóm -
+puto. Computación no es lo mismo que 
+Informática. Informática es una disciplina 
+más de las Ciencias Computacionales. Pero 
+para la mayoría de los casos prácticos, ambos términos se emplean 
+como sinónimos.   
+ 
+INFORMÁTICA    es un 
+término moderno utilizado par a referirse 
+al uso de programas de computadoras  
+(software) para manejar la información 
+de una forma rápida y útil en cualquiera 
+profesión o área científica, comercial o 
+personal. La Informática es la ciencia 
+aplicada que abarca el estudio y aplicación del tratamiento automático 
+de la información, utilizando dispositivos electrónicos y sistemas 
+computacionales. También está definida como el procesamiento 
+automático de la información.  
+ 
+INFOWARE    El término fue acuñado por Tim O´Reilly  
+y define a los sitios  Web  
+como Amazon.com que 
+utilizan software  con el 
+propósito de captar  datos  
+( comentarios de libros y 
+calificaciones  ) para luego 
+ser compartidos en el sitio 
+web y de esta manera generar valor agregado . Podría describirse 
+como el software para la informaci ón o aplicaciones de información.   
+ 
+ORGWARE   Es la relación de organización  que se 
+establece entre el software , el hardware , las personas usuarias  y otros 
+componentes tecnológicos . Se aplica como referencia a los  proyectos 
+de tecnología e investigación . 
+ 
+    Por e jemplo : el sistema 
+operativo  Windows 10  Profes -
+sional  (Software ) necesita un 
+mínimo de requerimientos de PC 
+(Hardware ) para instalarse, un 
+operador que administre su 
+información ( Usuario )  y una 
+conección a internet ( otras tec -
+nologias ). Todo esto  debe orga -
+nizarse sistematicamente .  
+ 
+ 
+ 
+  
+S I G L A S  
+ 
+T.I.C.:  Tecnologías 
+de la In formación 
+y la Comunica -
+ción.  
+ 
+N.T.I.C. : Nuevas 
+tecnologías de la 
+Información y la 
+Comunicación  
+ 
+N.T.I.T. : Nuevas 
+Tecnologías de la 
+Información y la 
+Telecomunicación  
+ 
+N.T.I.C.x.:    Nuevas 
+Tecnologías de la 
+Info rmación y la 
+Conectividad  
+En la sigla NTICx , 
+la    x   representa  
+C O N E C T I V I D A D . 
+La x  se utiliza  en 
+señales , comunica -
+ciones y redes .
+
+[Página 5]
+5 
+NTICx 4º Año Secundaria  Profemora Blogspot  Prof. MORA, José  Luis.  
+NTICx 4º Año Secundaria  Versión 1.4         Febrero  2021  Prof. MORA, José  Luis.  
+  
+TELEMÁTICA     Es la ciencia  que 
+estudia los métodos , técnicas y servicios  de la fusión 
+entre las telecomunicaciones y la informática . Del 
+prefijo Tele, que en griego significa, lejos y matica , 
+por Info rmatics , del inglés. Abarca desde cualquier 
+servicio de Internet , hasta los sistemas de GPS.   
+  
+BURÓTICA    Es la automatización de las tareas de una 
+oficina . Tambien llamada  ofimática . Aplica  máquinas y programas  
+para crear, guardar , almacenar, manipular y tran smitir digital -
+mente la información  . La ofi -
+mática ayuda a optimizar y 
+automatizar los procedimientos  
+existentes. Su “núcleo”  es una red 
+de área local . Esta permite a los 
+usuario s transmitir datos, correo 
+electrónico e incluso voz por la 
+red. Cumple con todos los  
+trabajo s en oficina : dictado, 
+mecanografía, archivado, copia, 
+fax, escaneado , microfilmado , operación con teléfonos , etc.  
+  
+DOMÓTICA    El término proviene de la unión de  las 
+palabras domus  (que significa 
+casa en latín) y tica (de 
+automática, palabra en griego, 
+'que funciona por sí sola '). Se 
+entiende por domótica al con-
+junto de sistemas capaces de 
+automatizar una vivienda . Apor-
+ta servicios de gestión energética, 
+segurid ad, bienestar y comu -
+nicación . Se integra todo con  
+redes interiores y exteriores de 
+comunicación : cableadas o inalámbricas . El control se realiza desde 
+dentro  y fuera del hogar.  
+  
+NANOTECNOLOGÍA    Es un campo de las ciencias 
+aplicadas dedicado al contro l y manipulación de la materia a una escala 
+menor que un micrómetro , µm ( milésima de milímetro , 0,001 mm ). 
+Nano , es un prefijo que equivale a 
+un factor de 10  -9 , en este caso de 
+la unidad metro.  Se refire al tamaño  
+de átomos y moléculas .  Lo más 
+común  es que tal manipulación se 
+produzca en un rango de entre 1 y 
+100 nanómetros , nm . Se llaman  
+nanobot , nanoides o nanites  a los 
+dispositivos creados con esta 
+ciencia . Un nanobot  de unos 50 nm 
+tiene el tamaño de 5 capas de 
+moléculas . Se aplica en innumerables c ampos : medicina, alimentos, 
+materiales, comunicaciones, agricultura, ganaderia, física, quimica, 
+biologia, textiles, construcciones, etc.   
+    
+ 
+ 
+ 
+ 
+  
+D o m ó t i c a  
+ 
+Con ella se puede 
+controlar  de forma 
+remota y automáti -
+camente el uso de 
+luces , seguridad , 
+antiincendios , cale-
+facción , iluminación  
+natural , riego de 
+plantas , acceso de 
+personas , grabación 
+de movimientos , en-
+cendido de electrodo -
+mésticos , comunica -
+ciones , etc., de una  
+casa  
+El nanómetro, nm , es 
+una unidad de lon -
+gitud que equivale a 
+una mil millonésima 
+parte de un metro.  
+ 
+1 nm  =  10−9 m. 
+NANOBOT  OFIMATICA  
+Disco Rígido
+
+[Página 6]
+6 
+NTICx 4º Año Secundaria  Profemora Blogspot  Prof. MORA, José  Luis.  
+NTICx 4º Año Secundaria  Versión 1.4         Febrero  2021  Prof. MORA, José  Luis.  
+  
+CIENCIA, TECNOLOGÍA Y TÉCNICA  
+ 
+ 
+El progreso en el mundo está marcado por el desarrollo de la 
+tecnolog ía. Vivimos condicionados por ella: somos  tecnodepen -
+diente s. 
+La presencia de las TIC 
+facilita n nuestra vida  cotidiana 
+pero también la condiciona . 
+Cuando algún sistema tecnológico 
+falla se generan problemas im -
+pensables.   
+El 15 de agosto de 2003, 
+con 35º C, se produjo un apagón, 
+desde Nueva York , hasta Toronto . 
+Miles de personas quedaron atra -
+padas y a oscuras en edificios , trenes subterráneos  y aeropuertos . Se 
+suspendieron  los teléfonos celulares. Los supermercados y shoppings 
+cerraron sus puertas. Este fue un problema provocado por la 
+tecnodependencia . 
+Su acelerado avance genera 
+polémicas y debates, también marca las 
+diferencias de los países desarrollados  (con 
+mayor tecnol ogia), que tienen ventajas 
+económicas sobre los países subdesarrollados 
+que no la poseen.  
+El mismo problema se ve reflejado 
+en la sociedad, poniendo en evidencia una 
+brecha digital  (entre los que tienen acceso a 
+estas tecnologías y los que no).   
+El hombre frente al mundo natural 
+siente la necesidad de conocerlo, con el 
+objetivo de contr olarlo y modificarlo para 
+adaptarlo a sus necesidades y lograr un mejor 
+confort en la vida . 
+El concepto de ciencia y técnica  están implícitos en el de 
+tecnología . El deseo de conocer lleva  al hombre a indagar (actividad 
+científica), generando 
+alguna acció n producto 
+de la indagación (tecno -
+logía).   
+La tecnología  
+se  basa en el aporte 
+científico, en cambio la 
+técnica  es una resultante 
+de la experiencia social . 
+  
+ 
+ 
+ 
+  
+T É C N I C A : es 
+el conjunto de pro -
+cedimiento s que 
+tienen como obje -
+t
+
+======================================================================
+⚠️  NOTA: Si la consigna anterior está incompleta o solo contiene URLs,
+   edita este archivo manualmente para mejorar la descripción.
+   Esto mejorará la consistencia de las evaluaciones automáticas.

@@ -1,0 +1,197 @@
+╔══════════════════════════════════════════════╗
+║  CONSIGNA DE REFERENCIA PARA EVALUACIÓN     ║
+╚══════════════════════════════════════════════╝
+
+MATERIA: Materia_851018360586
+ACTIVIDAD: Trabajo Practico N°1.1
+FECHA DESCARGA: 2026-06-17 20:38:41
+
+======================================================================
+
+[CONTENIDO EXTRAÍDO AUTOMÁTICAMENTE DE CLASSROOM]
+
+Trabajo Practico N°1.1
+Bibliografía utilizada para la elaboración de los módulos del área
+STALLINGS WILLIAM, “Comunicaciones y Redes de Computadores”, Prentice-Hall, Madrid, 2013.
+HAYES JIM Y ROSENBERG PAUL, “Cableado de Redes para Voz, Video y Datos”, Editorial Cengage Learning, Madrid, 2009.
+TROPEANO FRANCISCO, “Introducción al Procesamiento y Transmisión de Datos”,  Editorial Alsina, Buenos Aires, 2006. 
+HALSALL FRED, “Comunicación de Datos, Redes de Computadores y Sistemas Abiertos”, Editorial Pearson Educación, Madrid, 1998.
+CASTRO LECHTALER ANTONIO R., “Teleinformática para Ingenieros en Sistemas de Información (Tomos I y II)”, Editorial Reverte, Buenos Aires, 1999.
+[Página 1]
+Tema 1  
+INTRODUCCIÓN  A LOS SISTEMAS  OPERATIVOS  
+Conceptos  previos  sobre  sistemas  operativos  
+A fin de comprender una definición o un concepto, en profundidad, es importante realizar un análisis 
+basándose en su contexto, es decir, donde la definición o el concepto tiene su aplicación práctica; 
+por ello para comprender que es un Sistema Operativo, interesará conocer antes el concepto de 
+Sistema Informático, área global donde este tiene su aplicación siendo, sin lugar a dudas, una de 
+las partes más importante.  
+Un sistema  es un conjunto de diversos elementos interrelacionados que interactúan entre sí con 
+un objetivo determinado.  
+Un sistema informático : está formado por tres elementos diferenciables, indispensables para un 
+adecuado funcionamiento del mismo: el hardware, el software y las personas.  
+ Hardware: se denomina así a todos los componentes  físicos (tangibles) que forman parte 
+de la computadora. Así por ejemplo:  la unidad central de procesos (CPU), los dispositivos 
+de entrada  y salida (E/S) ( impresora, monitores ) y los sistemas de comunicaciones.  
+ Software: se denomina así a la parte lógica (intangible) de la máquina. Conjunto de 
+programas y archi vos que constituyen la parte lógica de la computadora.  Más 
+específicamente podemos decir que son el conjunto de instrucciones y rutinas escritas en 
+distintos lenguajes de bajo o alto nivel.  
+ Personas : El uso de computadoras requiere de la intervención de pe rsonas con diferentes 
+tipos de habilidades. Por un lado están los técnicos e ingenieros electrónicos que diseñan y 
+construyen el hardware. Luego están los analistas, licenciados e ingenieros en sistemas que 
+diseñan y construyen el software. Por último está n los usuarios que acceden al hardware a 
+través de los programas  
+El hardware actúa como la herramienta y el software como la instrucción a realizar.  
+Normalmente en una computadora residen programas de diferentes tipos: software de sistema y 
+software de ap licación.  
+ Software de Aplicación : Son programas orientados a automatizar actividades o asistir al 
+usuario en la realización de sus tareas. Comprende tanto a programas utilitarios de uso 
+general, como a programas a medida.  
+ Software de Sistema : son los prog ramas encargados de controlar las operaciones básicas 
+de la computadora, de manera tal que los usuarios puedan utilizar los recursos provistos por 
+el hardware, sin conocer detalles de su funcionamiento interno.  
+Podemos decir que un sistema operativo es un  programa que debe estar instalado en una 
+computadora y que actúa como intermediario entre el usuario y el hardware de una computadora y 
+su propósito es proporcionar un entorno en el cual el usuario pueda ejecutar sus programas. El 
+objetivo principal de un  Sistema Operativo es, entonces, lograr que el Sistema de computación se 
+use de manera cómoda, y el objetivo secundario es que el hardware del computador se emplee de 
+manera eficiente.  
+Este concepto luego lo ampliaremos
+
+[Página 2]
+Para comprender bien lo que significa e implica esta definición comenzaremos por ver la evolución 
+que han tenido los sistemas operativos.  
+ 
+EVOLUCIÓN  DE LOS SISTEMAS  OPERATIVOS  
+Los sistemas operativos, al igual que la arquitectura de las computadoras han s ufrido cambios a 
+través del tiempo, los cuales se pueden agrupar en generaciones.  
+La evolución del hardware ha marcado el paralelismo de la evolución de los sistemas operativos, 
+por esta razón clasificaremos el desarrollo de los sistemas operativos en gen eraciones que han sido 
+marcadas en base a las tecnologías de construcción de dichas arquitecturas.  
+ 
+Generación 0 (1940 – 1944):  Procesamiento por serie - Ausencia de Sistema Operativo.  
+ 
+A finales de los años 1940, con lo que podríamos llamar la aparición d e la primera generación de 
+computadoras, se accedía directamente a la consola de la computadora desde la cual se actuaba 
+sobre una serie de micro interruptores que permitían introducir directamente el programa en la 
+memoria de la computadora (en realidad a l existir tan pocas computadoras todos podrían 
+considerarse prototipos y cada constructor lo hacía sin seguir ningún criterio predeterminado).  
+En esta etapa , los sistemas operativos no existían  y la introducción de un programa para ser 
+ejecutado se conver tía en un increíble esfuerzo que solo podía ser llevado a cabo por muy pocos 
+expertos. Los programadores debían interactuar con el hardware de la computadora sin ayuda 
+externa. Esto hacía que el tiempo de preparación para realizar una tarea fuera considera ble. 
+Además para poder utilizar la computadora debía hacerse por turnos. Para ello, en muchas 
+instalaciones, se rellenaba un formulario de reserva en el que se indicaba el tiempo que el 
+programador necesitaba para realizar su trabajo. En aquel entonces las  computadoras eran 
+máquinas muy costosas lo que hacía que estuvieran muy solicitadas y que sólo pudieran utilizarse 
+en periodos breves de tiempo. Todo se hacía en  lenguaje de máquina y el procesamiento era en  
+serie (serial processing)  
+ 
+Primera generación ( 1945 – 1954):– tubos al vacío – Procesamiento en Serie  
+En esta generación, los sistemas utilizaban tubos de vacío (bulbos), eran máquinas que se 
+programaban con lenguaje de bajo nivel (código de máquina). Se carecía de sistema operativo.  
+Como ejemplo de co mputadoras de esta época se pueden citar el ENJAC (Electronic Numerical 
+Integrator Analyzer and computer), financiado por el. Laboratorio de Investigación Balística de los 
+Estados Unidos. El ENIAC era una máquina enorme con un peso de 30 toneladas, que era  capaz 
+de realizar 5,000 sumas por segundo, 457 multiplicaciones por segundo y 38 divisiones por 
+segundo. Otra computadora de esta época fue el EDVAC (Electronic Discrete Variable Automatic 
+Computer).  
+La forma de introducir información a la computadora era  insertando clavijas en paneles, que 
+dependiendo de las clavijas insertadas se indicaba que operación realizar.  
+A principio de la década del 50 aparecieron las tarjetas 
+perforadas que sustituirían a las clavijas ya que permitían 
+introducir más informació n y de forma más rápida,  
+El programador debía codificar su programa a mano y en 
+instrucciones máquina, además debía introducirlo 
+personalmente en la computadora, mediante las tarjetas 
+perforadas.  
+Todos los trabajos se realizaban en serie , es decir se introducía un programa en la computadora, 
+se ejecutaba y se imprimían los resultados. Este proceso se repetía con otros programas.
+
+[Página 3]
+El tiempo requerido preparar y para introducir un programa en aquellas grandes máquinas de lento 
+proceso super aba por mucho el de ejecución y resultaba poco provechoso el empleo de las 
+computadoras para la resolución de problemas prácticos.  
+Poco a poco se asientan los ensambladores, enlazadores (linkers) y cargadores para facilitarle la 
+tarea al programador. Tambi én comienzan a construirse las bibliotecas de funciones comunes, 
+dando así los primeros pasos en la reutilización del software.  Igualmente también se ofrecen los 
+drivers (programas de gestión de dispositivos periféricos), aunque no en forma automática, com o 
+en la actualidad, sino mediante bibliotecas de funciones de E/S que facilitan las operaciones con 
+los periféricos.  
+ 
+Segunda generación (1955 – 1964):– Transitores - Procesamiento por lotes – Aparece el 
+primer sistema operativo llamado Monitor . 
+En esta ge neración se comienzan a utilizar los transistores en lugar de los tubos al vacío, con lo 
+que el tamaño de las computadoras se reduce considerablemente, reduciéndose también el 
+consumo energético y el costo de los mismos.  
+La introducción de los transistores  permitió aumentar sustancialmente la confiabilidad de las 
+computadoras, lo que a su vez hizo factible construir máquinas comerciales. Estas computadoras 
+eran conocidas como mainframe.  
+En 1955 comenzó el desarrollo de los lenguajes de alto nivel, y al mis mo tiempo se empezó a dividir 
+el trabajo entre personas: programadores, perforador de tarjetas, operadores.  
+En los años sesenta aparecen los sistemas operativos. La creación del primer sistema operativo se 
+le atribuye a los laboratorios de investigación d e General Motors y fue desarrollado para su 
+computadora IBM 701.  
+Los sistemas operativos incorporan los conceptos tales como el monitor residente, el proceso por 
+lotes y el almacenamiento temporal.  
+El monitor  es el programa antepasado del Sistema Operativo. Abarca funciones muy elementales, 
+como visualizar y modificar los contenidos de la memoria principal, el lanzamiento automático para 
+la ejecución de un programa, la introducción de puntos de ruptura en los programas para puesta a 
+punto, etc.  
+Su funcionamiento consistía en cargar los programas 
+a memoria, leyéndolos de una cinta o de tarjetas 
+perforadas, y ejecutarlos.  
+El fin de estos sistemas operativos, era permitir en la 
+máquina la secuencia automática d e los trabajos de 
+los usuarios. Un trabajo en ejecución tenía el control 
+total de la máquina y no comenzaba otro hasta que 
+se llegaba al final del que estaba en ejecución u 
+ocurría un error.  Es decir, al terminar cada trabajo, 
+el control era devuelto al s istema operativo, el cual 
+limpiaba, leía e iniciaba el siguiente trabajo.  
+Ahora los programadores, en vez de decirle al 
+operador que programa cargar, debían informárselo 
+al monitor (mediante tarjetas de control especiales).  
+Esto es lo que se conoce como procesamiento por lotes  (Batch Processing) : los operadores 
+agrupaban los trabajos por lotes, que eran trabajos con necesidades similares y que eran ejecutados 
+en la computadora como un grupo de tareas. A medida que la computadora quedaba libre, se 
+ejecutaba  el siguiente lote.  
+Otro concepto que surgió es el de almacenamiento temporal , cuyo objetivo era disminuir el tiempo 
+de carga de los programas, haciendo simultánea la carga del programa o la salida de datos con la 
+ejecución de la siguiente tarea. Para ell o se utilizaban dos técnicas, el buffering  y el spooling .
+
+[Página 4]
+Buffering: Esta técnica consiste en que las transferencias de entrada/salida (E/S) se realizan a 
+través de un área intermedia de memoria (búfer). La CPU sólo espera por E/S cuando el búfer está 
+vacío (entrada) o lleno (salida). El uso de búferes permite solapar operaciones de E/S de una tarea 
+con instrucciones de CPU de esa misma tarea.  
+Spooling  (Simultaneous Peripheral Operation On -Line). Esta técnica de funcionamiento surge 
+gracias a la aparici ón de los discos. Se utiliza el disco como un enorme búfer. El proceso lee/escribe 
+sobre el disco, en lugar del dispositivo de E/S.  Mientras se ejecuta un trabajo, el sistema operativo 
+lee los datos del siguiente trabajo de la cinta/tarjetas al disco, imp rime la salida del anterior trabajo, 
+del disco a la impresora. El spooling permite solapar la E/S de un proceso ya terminado con las 
+operaciones en el CPU de otro proceso.  
+En 1959 nace COBOL, un leguaje orientado a la gestión de aplicaciones comerciales. T ambién 
+aparecen otros leguajes como ALGOL y APL. Los leguajes de alto nivel se limitaban a traducir a 
+lenguaje ensamblador.  
+ 
+ 
+Tercera generación (196 5 -1980): circuitos integrados – Procesamiento por Lotes 
+Multiprogramado . 
+ 
+A 1965 se la considera el año d el comienzo de la tercera generación de computadoras, 
+caracterizadas, sobre todo por el descubrimiento del Circuito Integrado (1960) que reemplazó a los 
+transistores. En esta época también se crearon las memorias de semiconductores que sustituyeron 
+a las d e núcleo de ferrita.  
+En 1964  se lanzó al mercado la familia de computadoras  IBM/360, siendo su sistema operativo el 
+OS/360.  
+A mediados de los 60 aparece Multics  sistema operativo multiusuario - multitarea desarrollado por 
+los laboratorios Bell de AT&T y Unix, convirtiéndolo en uno de los pocos sistemas operativos escritos 
+en un lenguaje de alto nivel  
+La característica de los siste
+
+======================================================================
+⚠️  NOTA: Si la consigna anterior está incompleta o solo contiene URLs,
+   edita este archivo manualmente para mejorar la descripción.
+   Esto mejorará la consistencia de las evaluaciones automáticas.

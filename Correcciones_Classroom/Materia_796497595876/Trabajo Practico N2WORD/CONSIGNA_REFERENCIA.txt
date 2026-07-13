@@ -1,0 +1,21 @@
+╔══════════════════════════════════════════════╗
+║  CONSIGNA DE REFERENCIA PARA EVALUACIÓN     ║
+╚══════════════════════════════════════════════╝
+
+MATERIA: Materia_796497595876
+ACTIVIDAD: Trabajo Practico N°2(WORD)
+FECHA DESCARGA: 2026-06-18 11:08:07
+
+======================================================================
+
+[CONTENIDO EXTRAÍDO AUTOMÁTICAMENTE DE CLASSROOM]
+
+Trabajo Practico N°2(WORD)
+Actividad Numero 2
+Realice preferentemente en un Word :
+Buscar y remplazar
+
+======================================================================
+⚠️  NOTA: Si la consigna anterior está incompleta o solo contiene URLs,
+   edita este archivo manualmente para mejorar la descripción.
+   Esto mejorará la consistencia de las evaluaciones automáticas.

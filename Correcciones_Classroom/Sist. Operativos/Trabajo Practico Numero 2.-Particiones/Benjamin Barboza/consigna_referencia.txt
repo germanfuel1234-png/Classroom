@@ -1,0 +1,19 @@
+Trabajo Practico Numero 2.-Particiones
+TRABAJO PRÁCTICO N°2
+Particiones de una unidad de almacenamiento”
+Consigna:
+Responde las siguientes preguntas de forma clara, fundamentada. Puedes complementar con esquemas o ejemplos para reforzar las respuestas.
+1)¿Qué es una partición?
+Explica el concepto y la utilidad de dividir un disco duro o unidad de almacenamiento en particiones.
+2)¿Qué tipo de particiones existen?
+Menciona y define:
+Primaria
+Extendida
+Lógica
+Dinámica
+3)¿Qué es un sistema de archivos?
+Define qué función cumple y su importancia para que un sistema operativo pueda almacenar y organizar la información.
+4)¿Qué sistema de archivos utilizan los sistemas operativos Windows 98, Windows XP, Windows 10 y Linux?
+Especifica cada caso.
+5)¿Qué es el Gparted?
+Explica qué herramienta es, para qué sirve y en qué entornos se utiliza.

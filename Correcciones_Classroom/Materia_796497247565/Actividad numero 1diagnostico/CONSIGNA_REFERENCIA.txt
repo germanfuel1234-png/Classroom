@@ -1,0 +1,34 @@
+╔══════════════════════════════════════════════╗
+║  CONSIGNA DE REFERENCIA PARA EVALUACIÓN     ║
+╚══════════════════════════════════════════════╝
+
+MATERIA: Materia_796497247565
+ACTIVIDAD: Actividad numero 1(diagnostico)
+FECHA DESCARGA: 2026-06-18 09:18:58
+
+======================================================================
+
+[CONTENIDO EXTRAÍDO AUTOMÁTICAMENTE DE CLASSROOM]
+
+Actividad numero 1(diagnostico)
+Actividad Numero 1
+“diagnostico programación”
+Realice preferentemente en un procesador de texto y en carpeta las siguientes preguntas.
+¿A que definimos un Software?
+Mencione los diferentes tipos de datos
+¿Que es una variable?
+¿Que es una constante?
+¿Que es un operador y que tipos de operadores existen?
+¿Que es un dato y que tipos de datos existen?
+¿Que es una función?
+Menciona las fases en la resolución de problema y en que consiste cada una de estas
+¿Qué es un algoritmo?
+¿Qué son las estructuras de control?
+¿Qué es un pseudocódigo?
+¿Diagrama de flujos de dato?
+¿Que es un código en programación?
+
+======================================================================
+⚠️  NOTA: Si la consigna anterior está incompleta o solo contiene URLs,
+   edita este archivo manualmente para mejorar la descripción.
+   Esto mejorará la consistencia de las evaluaciones automáticas.

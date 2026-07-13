@@ -1,0 +1,4 @@
+palabra=input(f"Ingrese una palabra: \n")
+num1=int(input(f"Ingrese el numero de veces que la palabra se repetira: \n"))
+for i in range(num1):
+    print(f"{palabra}")

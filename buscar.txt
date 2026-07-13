@@ -1,0 +1,25 @@
+Perfecto, eso es el problema. Mirando tu consola de scopes, tienes checkeado SOLO uno (el classroom.coursework.students), pero tu código solicita 6 scopes y la mayoría no están autorizados.
+
+Necesitás checkear estos (están en esa misma pantalla):
+
+✅ classroom.coursework.students — YA ESTÁ (el que ves checkeado)
+☐ classroom.courses.readonly — FALTA (búscalo, debe estar en Classroom API)
+☐ classroom.rosters.readonly — FALTA (permiso para ver la nómina)
+☐ userinfo.email — FALTA (para obtener email del perfil del profesor)
+☐   — FALTA (para leer archivos de Drive)
+
+https://console.cloud.google.com/auth/scopes?project=classroom-498311
+
+De esas imágenes, necesitás checkear:
+
+De la 1ª imagen (Classroom API):
+
+✅ classroom.profile.emails — lo veo en la lista, checkealo
+De la 2ª imagen (Drive API):
+
+✅ drive o drive.readonly — lo veo, checkealo (es el que dice "Ver y descargar todos tus archivos de Google Drive")
+PERO te faltan estos que NO veo en las imágenes:
+
+❌ classroom.courses.readonly — NO ESTÁ en esas screenshots
+❌ classroom.topics.readonly — NO ESTÁ en esas screenshots
+❌ classroom.rosters.readonly — NO ESTÁ en esas screenshots

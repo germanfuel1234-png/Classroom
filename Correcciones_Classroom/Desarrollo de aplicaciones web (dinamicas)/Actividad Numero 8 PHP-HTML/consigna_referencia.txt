@@ -1,0 +1,48 @@
+╔════════════════════════════════════════════════════════════╗
+║  ACTIVIDAD: Aplicación Web Dinámica con PHP
+╚════════════════════════════════════════════════════════════╝
+
+OBJETIVO:
+Crear una aplicación web funcional que integre HTML, CSS y PHP para gestionar
+datos de manera dinámica.
+
+REQUISITOS TÉCNICOS:
+1. Interfaz de usuario (HTML + CSS)
+   - Formulario funcional con validación cliente
+   - Diseño responsivo (mobile-friendly)
+   - Menú de navegación clara
+
+2. Backend en PHP
+   - Procesar datos del formulario (POST)
+   - Conexión a base de datos SQLite/MySQL
+   - Al menos 3 operaciones CRUD (CREATE, READ, UPDATE)
+
+3. Almacenamiento de datos
+   - Tabla con al menos 5 campos
+   - Validación de datos en backend
+   - Manejo de errores
+
+4. Seguridad básica
+   - Validar entrada de datos (evitar SQL injection)
+   - Escapar salida HTML (XSS protection)
+   - Usar prepared statements
+
+ESTRUCTURA ESPERADA:
+- index.php → página principal
+- formulario.php → procesa datos
+- listar.php → muestra registro
+- editar.php → modifica datos
+- eliminar.php → borra datos
+- estilos.css → diseño
+
+ENTREGA:
+- Archivo .zip con toda la estructura
+- README.md con instrucciones de instalación
+- Script SQL para crear base de datos
+
+CRITERIOS DE EVALUACIÓN:
+✓ Funcionalidad: Todas las operaciones funcionan correctamente
+✓ Código: Limpio, comentado, bien organizado
+✓ Diseño: Interfaz intuitiva y atractiva
+✓ Seguridad: Implementa validaciones y protecciones
+✓ Documentación: README claro con ejemplos de uso

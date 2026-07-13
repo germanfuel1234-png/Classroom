@@ -1,0 +1,33 @@
+╔══════════════════════════════════════════════╗
+║  CONSIGNA DE REFERENCIA PARA EVALUACIÓN     ║
+╚══════════════════════════════════════════════╝
+
+MATERIA: Materia_851018360586
+ACTIVIDAD: Trabajo Practico Numero 9.-Procesos
+FECHA DESCARGA: 2026-06-17 20:35:33
+
+======================================================================
+
+[CONTENIDO EXTRAÍDO AUTOMÁTICAMENTE DE CLASSROOM]
+
+Trabajo Practico Numero 9.-Procesos
+[Página 1]
+Materia:Sist. Operativos   Prof.Rodriguez G.  
+ 
+Trabajo Practico Numero 9  
+Procesos e interrupciones  
+Consigna : 
+En tu computadora:  
+1. Abre el Administrador de tareas (Windows)  o Monitor del sistema (Linux) . 
+2. Observá los procesos activos. Anotá:  
+o 3 procesos del sistema operativo  
+o 3 procesos de usuario  
+3. Explica con tus palabras qué es una  interrupción  y por qué es necesaria.  
+Preguntas adicionales : 
+4. ¿Qué significa que un proceso esté en “estado suspendido” o “en espera” ? 
+5. ¿Por qué algunos procesos tienen mayor prioridad que otros?
+
+======================================================================
+⚠️  NOTA: Si la consigna anterior está incompleta o solo contiene URLs,
+   edita este archivo manualmente para mejorar la descripción.
+   Esto mejorará la consistencia de las evaluaciones automáticas.

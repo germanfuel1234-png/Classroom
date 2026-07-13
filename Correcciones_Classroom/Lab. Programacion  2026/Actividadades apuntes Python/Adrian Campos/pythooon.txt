@@ -1,0 +1,23 @@
+import random
+numero_secreto=random.randint(1,20)
+print(f"Bienvenido al juego de adivinar el numero secreto\n")
+print(F"Tienes 5 Intentos\n")
+
+for i in range(1, 6, 1):
+    
+    numero = int(input("Ingrese un número\n"))
+
+
+    if numero == numero_secreto: 
+        print(f"¡Ganaste! Bien jugado.\n")
+        break
+    if numero != numero_secreto:
+        print(f"Lastima, vuelve a intentarlo.\n")
+    
+    if numero_secreto>numero:
+        print(f"El numero secreto es MAYOR al ingresado.\n")
+        
+    if numero_secreto<numero:
+        print(f"El numero secreto es MENOR al ingresado.\n")
+
+print(f"El numero por adivinar era el {numero_secreto}")

@@ -1,0 +1,22 @@
+🚀 Próximos Pasos Recomendados
+Elige uno (ordenado por impacto):
+
+A) 🔍 Optimizar Validación de Correspondencia (High Priority)
+Problema actual: El filtro "¿Corresponde a la consigna?" es muy básico
+Mejora: Refinar prompts de Gemini para detectar mejor "chamuyos" o respuestas vagas
+Impacto: Evitar dar notas altas a entregas falsas
+
+B) 💬 Refinar Feedback Personalizado (High Priority)
+Problema actual: Los comentarios pueden ser genéricos
+Mejora: Hacer más empático, específico y pedagógico el feedback según la nota obtenida
+Impacto: Alumnos entienden mejor qué mejorar
+
+C) 🔐 Fortalecer Seguridad OAuth (Medium Priority)
+Problema actual: A veces falla la publicación por permisos expirados
+Mejora: Auto-renovación de token + mejor manejo de errores 403
+Impacto: Publicación más confiable en Classroom
+
+D) 📈 Auditoría de Calificaciones (Medium Priority)
+Problema actual: No hay trazabilidad clara de por qué cada nota
+Mejora: Generar reportes con % de alineación y argumentos matemáticos
+Impacto: Responder reclamos de alumnos con datos duros

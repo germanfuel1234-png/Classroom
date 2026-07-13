@@ -1,0 +1,215 @@
+╔══════════════════════════════════════════════╗
+║  CONSIGNA DE REFERENCIA PARA EVALUACIÓN     ║
+╚══════════════════════════════════════════════╝
+
+MATERIA: Materia_851018360586
+ACTIVIDAD: Trabajos Practicos N°1.2
+FECHA DESCARGA: 2026-06-17 20:37:48
+
+======================================================================
+
+[CONTENIDO EXTRAÍDO AUTOMÁTICAMENTE DE CLASSROOM]
+
+Trabajos Practicos N°1.2
+[Página 1]
+Tema 2  
+SISTEMAS OPERATIVOS  
+Concepto de sistema operativo  
+ 
+Hoy en día, la computación está en todas partes, y tenemos una gran gama de ellas, desde las más 
+grandes (Mainframes) hasta las más pequeñas (teléfonos inteligentes).  
+Un sistema operativo lo podemos encontrar normalmente en la mayoría de los aparatos electrónicos 
+que utilizan microprocesadores para funcionar, ya que gracias a estos podemos entender la 
+máquina y que ésta cumpla con sus funciones (computadoras, teléfonos móviles, entre otros) .  En 
+cada uno de estos aparatos electrónicos vamos a encontrar distintos sistemas operativos. Para 
+Mainframes hay una gama de sistemas operativos, distintos a los que se consiguen en las 
+Estaciones de Trabajo, distintos a los que se instalan en las Computado ras Personales, distintos a 
+los usados en las Tablets, en los Smartphones, y hasta en microondas, heladeras.  
+A pesar que, casi a diario, todos nosotros usamos sistemas operativos, es difícil definir que es un 
+sistema operativo . 
+Existen diversas definiciones de lo que es un Sistema Operativo, pero no hay una definición que 
+sea estándar; a continuación se daremos algunas  
+ 
+ Un sistema operativo es un programa del sistema que controla la ejecución de los programas 
+de aplicaciones y actúa como interfaz  entre los usuarios de la computadora y el hardware 
+del mismo.  
+ El sistema operativo es un programa o conjunto de programas de computadora destinado a 
+permitir una gestión eficaz de sus recursos. Comienza a trabajar cuando se enciende la 
+computador a, y ges tiona el hardware de la máquina desde los niveles más básicos, 
+permitiendo también la interacción con el usuario.  
+ Un Sistema Operativo es un programa que actúa como intermediario entre el usuario y el 
+hardware de un computador y su propósito es proporciona r un entorno en el cual el usuario 
+pueda ejecutar programas. El objetivo principal de un Sistema Operativo es, entonces, lograr 
+que el Sistema de computación se use de manera cómoda, y el objetivo secundario es que 
+el hardware del computador se emplee de m anera eficiente.  
+ Andrews S. Tanenbaum  lo define desde dos puntos de vista (complementarios) como 
+máquina extendida o virtual y como administrador de recursos.   Como máquina virutal 
+el sistema operativo es un conjunto de componentes que ocultan la complejid ad del 
+hardware de forma que el programador y el usuario ven una abstracción del mismo que se 
+les presenta como una máquina virtual que entiende órdenes a un nivel superior. En este 
+sentido, el sistema operativo proporciona servicios para: Crear programas,  Ejecución de 
+programas, Operaciones de entrada/salía, Manipulación y control de sistema de archivos, 
+Detección de errores, tanto de hardware como de software, Control de acceso al sistema, 
+Elaboración de informes estadísticos.  
+Como gestor de recursos: Desde este punto de vista se considera al sistema operativo 
+como gestor de todos los recursos que componen el sistema: tiempo de CPU, espacio de 
+memoria, espacio de almacenamiento de archivos, dispositivos de entrada. Es decir, el 
+sistema operativo determina a que proceso (programa en ejecución) se le entregan los 
+recursos, qué cantidad de recursos se conceden, en que momento y durante cuánto tiempo.  
+ Un conjunto de programas, rutinas y procedimientos manuales y automáticos que 
+administran los  recursos de un si stema de cómputos en operación para permitir a un grupo 
+de usuarios, compartir  eficientemente el mismo.  
+ Un programa o conjunto de programas residentes en la computadora responsable de las 
+siguientes funciones:  
+o Inicializar la máquina: Chequeo de recursos y  I.P.L. (Initial Program Loader), o 
+bootstrapping  (booteo en la jerga)
+
+[Página 2]
+o Admin istrar los recursos del sistema,  
+o Servir de interfase hombre -máquina  
+o Proteger a los usuarios y a los recursos  
+ 
+Resumiendo : podría mos decir que los Sistemas Operativos son un conjunto de programas que  
+crean la interfase entre el hardware y el usuario, y que tiene cuatro funciones primordiales, que son:  
+ Gestionar el hardware: Se refiere al hecho de administrar de una forma más eficiente los 
+recursos de la máquina.  
+ Facilitar el trabajo al usuario: Permite una comunicación con los dispositivos de la máquina.  
+ Brindar un ambiente de ejecución seguro. Protegiendo el uso correcto de los recursos.  
+ Inicializar la máquina   
+ 
+ELEMENTOS DE UN SISTEMA  OPERATIVO  
+El sistema operativo está conformado, además de sus instrucciones y rutinas propias que 
+normalmente se denominan núcleo o kernel, por un conjunto de programas que utiliza la 
+computadora para realizar sus tareas.  
+Estos programas se pueden clasifi car en:  
+ Programas Utilitarios.  
+ Programas de Servicio.  
+ Programas de Control.  
+ 
+Programas Utilitarios : 
+Normalmente se reserva el nombre de utilitarios para aquellos programas que son desarrollados 
+por la empresa fabricante del hardware o del sistema operativo  para realizar funciones 
+complementarias y/o de ayuda al mantenimiento del sistema, facilitando el trabajo de los 
+programadores y usuarios calificados. En general son de tipo repetitivo, como ser clasificación de 
+archivos, prueba de localización de errores , protección de archivos, defragmentación del disco, etc. 
+Dentro de los programas utilitarios se pueden distinguir dos clases:  
+ Orientados al sistema.  
+ Orientados a los archivos.  
+ 
+Programas de Servicio :  
+Son programas destinados al desarrollo, implementación  y puesta a punto de los programas de 
+aplicación y se pueden distinguir los:  
+a) Programas traductores  
+b) Programas de gestión de librerías  
+c) Programas editores  
+ 
+a) Programas Traductores: Realizan, a través de distintos pasos, la traducción del 
+lenguaje en que están escritos los programas de aplicación, al lenguaje máquina que 
+interpreta la computadora.   
+Al programa original escrito en algún lenguaje de programación se lo denomina 
+“program a fuente ” y el que queda tras la traducción se le conoce con el nombre de 
+“programa objeto ”.  
+No todos los programas traductores actúan de la misma forma y según como realicen el
+
+[Página 3]
+proceso de traducción, se dividen en:  
+ 
+ Compiladores  
+ Interpretes  
+ Ensambladores  
+ 
+ Los compiladores  realizan el procesamiento de verificación sintáctico y semántico 
+traduciendo, posteriormente, al programa fuente en código máquina dejándose 
+dispuesto para su ejecución con poca o ninguna preparación posterior.  
+ Los Intérpretes  realizan t ambién el procesamiento de verificación sintáctico, 
+semántico y traducción pero instrucción a instrucción, ejecutando cada una de ellas 
+una vez traducida.  
+ El ensamblador  es un traductor más sencillo que, en general, realiza la traducción 
+de una instrucción  del lenguaje fuente de bajo nivel a una instrucción de lenguaje 
+máquina. No obstante, existen ensambladores que poseen macroinstrucciones que 
+convierten una instrucción fuente a varias instrucciones objeto.  
+ 
+Los compiladores utilizan más memoria donde alm acenar el programa objeto, pero actúan 
+con mayor rapidez en las sucesivas ejecuciones del programa. Los intérpretes, por el 
+contrario, requieren mucha menos memoria, pero actúan en forma más lenta. Al principio 
+los intérpretes eran más utilizados porque la s computadoras disponían de poca memoria 
+pero a medida que se fueron construyendo nuevas máquinas con memorias superiores 
+se han diseñado y puesto en funcionamiento compiladores para la mayoría de los 
+lenguajes utilizados.  
+ 
+b) Programas de Gestión de Librería s: Son programas destinados a conservar y organizar 
+el conjunto de los programas de aplicación. Entre sus funciones caben destacar, la 
+incorporación de programas, anulación o borrado de programas y organización de 
+programas.  
+Como los programas pueden estar en lenguaje de alto nivel, en módulos objeto o 
+preparados para la ejecución, se pueden clasificar las librerías en tres modalidades:  
+ Librería fuente , que contiene los programas tal y como los crea el programador.  
+ Librería objeto , que contiene los módulos traducidos de los diversos programas.  
+ Librería ejecutable , que contiene programas en código máquina una vez que han sido 
+ensamblados los módulos de que se componen y pueden ser procesados por la CPU.  
+ 
+c) Programas Editores:  Son aquellos que permiten l a escritura, corrección y puesta a punto 
+de los programas de aplicación. En general los editores son de propósito general, es decir, 
+no están destinados a un lenguaje en especial y la grabación la realizan en formato 
+estándar que pueden interpretar los pro gramas traductores, normalmente conocido como 
+“texto plano”.  
+ 
+Programas de Control :  
+ 
+Conjunto de programas que facilitan y mejoran el rendimiento del uso de las computadoras. Son los 
+encargados de llevar a cabo la gestión de los recursos del sistema, facilitando el acceso ordenado 
+y eficaz de los procesos a los recursos disponibles en el sistema en cada momento, impidiendo el 
+interbloqueo de actividades.
+
+[Página 4]
+Los programas de control permiten la utilización, por varios programas, de los recursos casi siempr e 
+escasos de la computadora, haciendo posible la ejecución de dos o más programas en forma 
+simultánea y suelen estar integrados por rutinas o módulos cada uno de los cuales gestiona uno de 
+los tres grupos fundamentales:  
+ 
+ Gestión del Hardware : el que gestio na al hardware se encarga de controlar y administrar la CPU, 
+la memoria y las rutinas de entrada y salida  
+ Gestión de Archivos : el que gestiona a los archivos maneja los datos externos moviéndolos entre 
+la memoria y los dispositivos periféricos  
+ Gestión de Tareas: El que gestiona a las tareas se encarga de asignar recursos a las diversas 
+tareas y permite la comunicación del sistema con el exterior.  
+ 
+ 
+FUNCIONES DE UN SISTEMA OPERATIVO  
+ 
+Las funciones principales de un Sistema Operativo son : 
+1. Inicializar la máquina: Esta tarea es llevada a cabo por rutinas residentes en memoria ROM 
+o RAM de la máquina más otras residentes en el disco del sistema o la partición activa para 
+la función de arranque. La inicialización tiene por objetivo preparar la máquina real y llevarla 
+a un estado tal que pueda ejecutar el primer trabajo. Menos del 1% de las tareas del S.O. 
+se destinan a ésta función. Hay dos tipos de inicialización:  
+a) Total (cold start):  Esta rutina se conoce con el nombre de I.P.L  (Initial Program  
+Loader ), o bootstrapping  (conocido en la jerga como booteo ). El Sistema Operativo 
+inicialmente se encuentra almacenado en la memoria secundaria. Al encender la 
+computadora se carga y ejecuta un pedazo de código que se encuentra en la 
+Memoria Central (ROM) , el cual carga el BIOS (Basic Input Output System), y éste a 
+su vez carga el Núcleo o Kernel del Sistema Operativo en Memoria Central (RAM). 
+Inicializa la máquina y carga todos los programas de aplicación y software necesario 
+para permitir ejecutar progra mas o comandos del Shell. Una vez que dicha rutina es 
+finalizada la máquina queda preparada para ejecutar la primera carga de trabajo bajo 
+el control del Sistema Operativo, que luego administrará todo el procesamiento del 
+sistema de cómputo hasta su cierre  
+ 
+ 
+b) Parcial (warm start):  En este caso no se ejecutan las rutinas de verificación de 
+recursos (residentes en la BIOS o Kernel), sino que el proceso arranca directamente 
+de la ejecución del proceso de inicialización del sistema operativo. La recuperación 
+depende generalmente del tipo o clase de evento ocurrido que provocó la 
+interrupción de la ejecución y de ello depende qué trabajo preservado reinicia. Los 
+eventos causantes de la interrupción de la ejecución pueden ser generados por 
+errores del Hardware, vi olaciones a Protecciones, corte de luz, finalización del tiempo 
+de uso de CPU, etc. El ejemplo más común de éste tipo de inicialización es el CTRL -
+ALT-DEL, existente en el DOS.
+
+[Página 5]
+2. Servir de intermediario en la com
+
+======================================================================
+⚠️  NOTA: Si la consigna anterior está incompleta o solo contiene URLs,
+   edita este archivo manualmente para mejorar la descripción.
+   Esto mejorará la consistencia de las evaluaciones automáticas.

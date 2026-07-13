@@ -1,0 +1,42 @@
+╔══════════════════════════════════════════════╗
+║  CONSIGNA DE REFERENCIA PARA EVALUACIÓN     ║
+╚══════════════════════════════════════════════╝
+
+MATERIA: Materia_796518931347
+ACTIVIDAD: Trabajo Practico N°4(Motherboar)
+FECHA DESCARGA: 2026-06-17 20:25:07
+
+======================================================================
+
+[CONTENIDO EXTRAÍDO AUTOMÁTICAMENTE DE CLASSROOM]
+
+Trabajo Practico N°4(Motherboar)
+[Página 1]
+Materia:Lab Hard   Prof.Rodriguez  G 
+ 
+ 
+Trabajo Practico N 4 
+Motherboar(Placa Madre)  
+ 
+  ¿Qué es una motherboard y cuál es su función principal dentro de una 
+computadora?  
+  ¿Cuáles son los materiales principales con los que está construida una 
+motherboard?  
+  Nombrá al menos cinco componentes que suelen estar presentes en una 
+motherboard.  
+  ¿Qué función cumple el chipset en una motherboard? ¿Por qué es importante?  
+  ¿Qué diferencia hay entre los zócalos de memoria RAM y el zócalo del 
+procesador?  
+  ¿Qué es la BIOS o UEFI y dónde se encuentra en la motherboard?  
+  ¿Qué tipos de ranuras de expansión se pueden encontrar en una motherboard 
+moderna? Nómbralas y explicá su función.  
+  ¿Qué es el conector ATX y para qué sirve?  
+  nombrar 5  motherboard real (o imagen detallada) y completá el siguiente 
+esquema: marcá y nombrá cada parte que recon ozcas.  
+  Dibujá un croquis (esquema a mano alzada) de una motherboard señalando los 
+componentes más importantes.
+
+======================================================================
+⚠️  NOTA: Si la consigna anterior está incompleta o solo contiene URLs,
+   edita este archivo manualmente para mejorar la descripción.
+   Esto mejorará la consistencia de las evaluaciones automáticas.

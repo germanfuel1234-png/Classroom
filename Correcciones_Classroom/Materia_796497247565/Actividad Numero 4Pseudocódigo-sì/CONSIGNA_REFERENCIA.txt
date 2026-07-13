@@ -1,0 +1,24 @@
+╔══════════════════════════════════════════════╗
+║  CONSIGNA DE REFERENCIA PARA EVALUACIÓN     ║
+╚══════════════════════════════════════════════╝
+
+MATERIA: Materia_796497247565
+ACTIVIDAD: Actividad Numero 4(Pseudocódigo-sì)
+FECHA DESCARGA: 2026-06-18 09:15:14
+
+======================================================================
+
+[CONTENIDO EXTRAÍDO AUTOMÁTICAMENTE DE CLASSROOM]
+
+Actividad Numero 4(Pseudocódigo-sì)
+Actividad Numero 4
+“pseudocódigo “
+Funcion Sí
+Crear el Pseudocódigo para un programa que muestre en pantalla la edad del usuario, a dicho cartel se le agregara una condición de edad( mayor de edad o menor de edad) En nuestra base de datos debemos tener la ficha del usuario que contenga: Nombre, año de nacimiento, lugar de nacimiento, estado civil, DNI, país , provincia y domicilio.
+Pedirle al usuario la edad y acorde a eso los diferentes carteles de edad. De 0-4;5-13;14-17;18-30;31-60;61-80;81+
+LA LOTERIA!  Realizar un pseudocodigo para un programa que le pida al usuario un número y diga si dicho numero esta; “MUY ALEJADO”, “MUY CERCA”, “Aproximado”, “Por Poco”, “por mucho” o en el caso de que sea el numero exacto un cartel que diga “Felicidades Ganaste la Loteria!”.
+
+======================================================================
+⚠️  NOTA: Si la consigna anterior está incompleta o solo contiene URLs,
+   edita este archivo manualmente para mejorar la descripción.
+   Esto mejorará la consistencia de las evaluaciones automáticas.

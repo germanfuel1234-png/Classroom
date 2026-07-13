@@ -1,0 +1,63 @@
+  7    Patricio amato                   1/10  Rehacer             ✅ link
+======================================================================
+
+¿Cómo publicar?
+  [B] Borrador  — nota visible solo para vos (recomendado para revisar)
+  [D] Definitiva — nota publicada, alumno recibe notificación
+  [N] Cancelar
+Elegí B, D o N: b
+
+¿Confirmar antes de cada alumno?
+  [S] Sí (recomendado la primera vez para verificar que pyautogui funcione)
+  [N] No (procesar todos automáticamente)
+Elegí S o N: s
+
+  📊 MODO SOLO NOTAS — se suben calificaciones sin pegar comentarios.
+
+======================================================================
+  📊 MODO SOLO NOTAS: sube calificaciones sin tocar comentarios
+======================================================================
+
+[1/7] 👤 german rodriguez
+   ❌ Error subiendo nota: <HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/851018360619/studentS
+   ⓘ Comentario omitido (modo solo notas)
+
+[2/7] 👤 Mateo Cuevas
+   ❌ Error subiendo nota: <HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/851018360619/studentS
+   ⓘ Comentario omitido (modo solo notas)
+
+[3/7] 👤 santino dominguez
+   ❌ Error subiendo nota: <HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/851018360619/studentS
+   ⓘ Comentario omitido (modo solo notas)
+
+[4/7] 👤 Benjamin Barboza
+   ❌ Error subiendo nota: <HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/851018360619/studentS
+   ⓘ Comentario omitido (modo solo notas)
+
+[5/7] 👤 Santino Massa
+   ❌ Error subiendo nota: <HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/851018360619/studentS
+   ⓘ Comentario omitido (modo solo notas)
+
+[6/7] 👤 sebastian flores
+   ❌ Error subiendo nota: <HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/851018360619/studentS
+   ⓘ Comentario omitido (modo solo notas)
+
+[7/7] 👤 Patricio amato
+   ❌ Error subiendo nota: <HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/851018360619/studentS
+   ⓘ Comentario omitido (modo solo notas)
+
+======================================================================
+  📊 RESUMEN DEL FLUJO
+======================================================================
+  Notas publicadas:          0/7
+  Comentarios automáticos:   0/7
+  Comentarios pendientes:    0
+  ⚠️ Errores: 7
+     - german rodriguez (nota): <HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/8
+     - Mateo Cuevas (nota): <HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/8
+     - santino dominguez (nota): <HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/8
+     - Benjamin Barboza (nota): <HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/8
+     - Santino Massa (nota): <HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/8
+     - sebastian flores (nota): <HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/8
+     - Patricio amato (nota): <HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/8
+======================================================================

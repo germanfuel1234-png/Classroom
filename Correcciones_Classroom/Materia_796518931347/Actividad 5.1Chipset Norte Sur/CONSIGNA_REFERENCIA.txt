@@ -1,0 +1,28 @@
+MATERIA: Materia_796518931347
+ACTIVIDAD: Actividad 5.1(Chipset Norte Sur)
+FECHA DESCARGA: 2026-06-17 19:57:30
+======================================================================
+
+Actividad 5.1(Chipset Norte Sur)
+https://www.profesionalreview.com/2019/10/06/chipset-norte-vs-chipset-sur/
+Trabajo Practico 5.1
+“Northbridge- Southbridge”
+¿Cuál era la función principal del chipset norte (Northbridge) en las arquitecturas tradicionales?
+Investiga y explica brevemente cómo cambió la función del Northbridge con la aparición de los procesadores modernos (por ejemplo, Intel Core i3/i5/i7 o AMD Ryzen).
+El chipset sur (Southbridge) solía controlar dispositivos más lentos del sistema. Mencioná al menos 3 ejemplos de esos dispositivos.
+¿Qué componente se encarga hoy en día de muchas de las funciones que antes cumplían los chipsets norte y sur? Buscá cómo se llama y dónde se encuentra.
+5. Completá el siguiente cuadro según lo que investigues:
+Relacioná el tema: investigá qué es el "bus frontal" (Front Side Bus - FSB) y explicá cómo se vinculaba con el Northbridge. ¿Existe hoy en día?
+A lo largo del tiempo, los chipsets evolucionaron junto a la arquitectura de las computadoras. Buscá información sobre el término “hub de plataforma” (Platform Controller Hub o PCH) y explicá qué rol cumple en las placas modernas.
+¿Cuál es la principal función del chipset norte (Northbridge) en una placa madre tradicional?
+a) Controlar los puertos USB
+b) Administrar el acceso al disco duro
+c) Conectar el CPU con la RAM y la tarjeta gráfica
+d) Manejar las conexiones de red
+¿Por qué se le llama "puente norte" y "puente sur"?
+10. ¿Qué cambios ocurrieron con la aparición de los procesadores más modernos en relación al chipset norte?
+a) Se eliminó completamente el chipset norte
+b) Se integraron sus funciones al procesador
+c) Se movió al chipset sur
+d) Sigue cumpliendo el mismo rol sin cambios
+11. Menciona una diferencia importante en la velocidad de trabajo entre el chipset norte y el chipset sur.

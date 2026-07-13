@@ -1,0 +1,3 @@
+output,mensaje en pantalla.
+
+variables "sector al cual podemos almacenar datos".

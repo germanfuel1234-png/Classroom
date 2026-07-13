@@ -1,0 +1,51 @@
+╔════════════════════════════════════════════════════════════╗
+║  ACTIVIDAD: Simulación de Procesos Industriales (CADESIMU)
+╚════════════════════════════════════════════════════════════╝
+
+OBJETIVO:
+Utilizar el software CADESIMU para simular y analizar un proceso industrial,
+identificando puntos críticos y propuestas de mejora.
+
+ACTIVIDADES REQUERIDAS:
+1. Seleccionar un proceso industrial
+   - Producción (ejemplo: fabricación textil, ensamblaje)
+   - Línea de montaje
+   - Procesamiento de materia prima
+
+2. Crear el modelo en CADESIMU
+   - Definir recursos (máquinas, operarios, espacio)
+   - Establecer secuencia de procesos
+   - Configurar tiempos de operación
+
+3. Realizar simulación
+   - Ejecutar mínimo 10 ciclos productivos
+   - Registrar datos de eficiencia
+   - Tomar capturas del software en ejecución
+
+4. Análisis de resultados
+   - Tasa de producción actual
+   - Cuellos de botella identificados
+   - Tiempo de ciclo promedio
+   - Utilización de recursos (%)
+
+5. Propuesta de mejora
+   - Modificar parámetros (recursos, tiempos)
+   - Simular nueva configuración
+   - Comparar resultados antes/después
+   - Justificar mejora propuesta
+
+ENTREGA:
+- Archivo CADESIMU (.sim o .cadesimu)
+- Reporte PDF con:
+  * Descripción del proceso
+  * 5+ capturas del software
+  * Tabla comparativa de resultados
+  * Gráficos de eficiencia
+  * Conclusiones
+
+CRITERIOS:
+✓ Complejidad: Modelo con mínimo 4 procesos
+✓ Funcionamiento: Simulación sin errores
+✓ Análisis: Identificación clara de problemas
+✓ Mejora: Propuesta justificada y cuantificada
+✓ Documentación: Reporte completo y claro

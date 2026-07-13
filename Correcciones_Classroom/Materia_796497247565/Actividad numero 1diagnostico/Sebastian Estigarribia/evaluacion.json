@@ -1,0 +1,11 @@
+{
+  "estado": "Aprobado con deficiencias",
+  "nota": 6,
+  "motivo": "Análisis de concordancia con consigna: 50% cobertura. Entrega con desarrollo adecuado. Cobertura parcial de temas solicitados.",
+  "feedback": "Tu entrega de Actividad numero 1(diagnostico) presenta un desarrollo parcial. Analicemos qué falta.\n\n✓ Temas que sí abordaste bien: texto, tipos, datos, variable, constante.\n✗ Temas por mejorar o que faltaron: diagnostico, programación, realice, preferentemente, procesador.\n\nEntrega con desarrollo adecuado. Cobertura parcial de temas solicitados.\n\nPara mejorar en próximas entregas:\n1. Lee cuidadosamente TODA la consigna antes de comenzar.\n2. Identifica los puntos clave que deben estar en tu trabajo.\n3. Desarrolla cada punto con profundidad y claridad.\n4. Si necesitas orientación, consulta al docente.\n\nCalificación: 6/10.",
+  "alumno": "Sebastian Estigarribia",
+  "materia": "Materia_796497247565",
+  "actividad": "Actividad numero 1(diagnostico)",
+  "archivos_descargados": 2,
+  "fecha": "2026-06-18T09:19:26.286653"
+}

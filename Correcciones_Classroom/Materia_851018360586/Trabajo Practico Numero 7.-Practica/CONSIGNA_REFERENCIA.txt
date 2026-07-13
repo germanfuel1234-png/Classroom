@@ -1,0 +1,33 @@
+╔══════════════════════════════════════════════╗
+║  CONSIGNA DE REFERENCIA PARA EVALUACIÓN     ║
+╚══════════════════════════════════════════════╝
+
+MATERIA: Materia_851018360586
+ACTIVIDAD: Trabajo Practico Numero 7.-Practica
+FECHA DESCARGA: 2026-06-17 20:36:17
+
+======================================================================
+
+[CONTENIDO EXTRAÍDO AUTOMÁTICAMENTE DE CLASSROOM]
+
+Trabajo Practico Numero 7.-Practica
+[Página 1]
+Materia:Sist. Operativos   Prof.Rodriguez G.  
+ 
+Trabajo Practico Numero 7  
+Exploración práctica  
+Consigna:  
+En el laboratorio o máquina virtual:  
+1. Ingresá al Panel de control / Configuración del sistema . 
+2. Localizá y anotá minimo 4  herramientas que permiten personalizar el entorno 
+del usuario.  
+3. Cambiá alguna configuraci ón visible (tema, fondo, idioma, etc.) y explicá cómo 
+lo hiciste.  
+Preguntas adicionales:  
+4. ¿Qué beneficios tiene personalizar el entorno de trabajo?  
+5. ¿Qué riesgos puede haber si se modifican configuraciones sin conocer su función?
+
+======================================================================
+⚠️  NOTA: Si la consigna anterior está incompleta o solo contiene URLs,
+   edita este archivo manualmente para mejorar la descripción.
+   Esto mejorará la consistencia de las evaluaciones automáticas.

@@ -1,0 +1,21 @@
+╔══════════════════════════════════════════════╗
+║  CONSIGNA DE REFERENCIA PARA EVALUACIÓN     ║
+╚══════════════════════════════════════════════╝
+
+MATERIA: Materia_796497595876
+ACTIVIDAD: Actividad N°4(Macro-Organigrama)
+FECHA DESCARGA: 2026-06-18 11:03:29
+
+======================================================================
+
+[CONTENIDO EXTRAÍDO AUTOMÁTICAMENTE DE CLASSROOM]
+
+Actividad N°4(Macro-Organigrama)
+Actividad Numero 4
+Realice un Organigrama. Como por ejemplo de una organización o una familia o un club o una institución escolar.
+También debemos crear una macro que aparezca en la barra de accesos rápido y mostrar su funcionamiento o en su defecto describirlo.
+
+======================================================================
+⚠️  NOTA: Si la consigna anterior está incompleta o solo contiene URLs,
+   edita este archivo manualmente para mejorar la descripción.
+   Esto mejorará la consistencia de las evaluaciones automáticas.

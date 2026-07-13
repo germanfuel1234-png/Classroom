@@ -1,0 +1,27 @@
+╔══════════════════════════════════════════════╗
+║  CONSIGNA DE REFERENCIA PARA EVALUACIÓN     ║
+╚══════════════════════════════════════════════╝
+
+MATERIA: Materia_796497247565
+ACTIVIDAD: Actividad Numero 3(Pseudocódigo)
+FECHA DESCARGA: 2026-06-18 09:16:39
+
+======================================================================
+
+[CONTENIDO EXTRAÍDO AUTOMÁTICAMENTE DE CLASSROOM]
+
+Actividad Numero 3(Pseudocódigo)
+cm a M= 100cm a 1M
+celcius a fahrenheit=(0 °C × 9/5) + 32 = 32 °F
+milas a kilometros = 1M a 1.0609Km
+Actividad Numero 3
+“pseudocódigo “
+Crear el Pseudocódigo para un programa que haga la convergencia de 3 elementos, como por ejemplo:
+Cm a M.
+Celsius a fharengeit.
+Millas a kilómetros.
+
+======================================================================
+⚠️  NOTA: Si la consigna anterior está incompleta o solo contiene URLs,
+   edita este archivo manualmente para mejorar la descripción.
+   Esto mejorará la consistencia de las evaluaciones automáticas.

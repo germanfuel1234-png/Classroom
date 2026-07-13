@@ -1,0 +1,35 @@
+╔══════════════════════════════════════════════╗
+║  CONSIGNA DE REFERENCIA PARA EVALUACIÓN     ║
+╚══════════════════════════════════════════════╝
+
+MATERIA: Materia_851018360586
+ACTIVIDAD: Trabajo Practico Numero 8.-Nucleo
+FECHA DESCARGA: 2026-06-17 20:35:55
+
+======================================================================
+
+[CONTENIDO EXTRAÍDO AUTOMÁTICAMENTE DE CLASSROOM]
+
+Trabajo Practico Numero 8.-Nucleo
+[Página 1]
+Materia:Sist. Operativos   Prof.Rodriguez G.  
+ 
+Trabajo Practico Numero 8  
+El núcle o y la memoria  
+ 
+ 
+Consigna : 
+Investiga y explica con tus palabras:  
+1. ¿Qué es el  núcleo (kernel) ? 
+2. ¿Qué diferencia hay entre  memoria real  y memoria virtual ? 
+3. ¿Qué es el  swapping  y cómo afecta el rendimiento?  
+Preguntas adicionales:  
+4. ¿Qué ocurre cuando la memoria RAM se llena y el sistema debe usar la memoria 
+virtual ? 
+5. ¿Por qué algunos sistemas operativos son más eficientes en la gestión de memoria 
+que otros?
+
+======================================================================
+⚠️  NOTA: Si la consigna anterior está incompleta o solo contiene URLs,
+   edita este archivo manualmente para mejorar la descripción.
+   Esto mejorará la consistencia de las evaluaciones automáticas.

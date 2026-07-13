@@ -1,0 +1,42 @@
+{
+  "notas_publicadas": 0,
+  "comentarios_automaticos": 0,
+  "comentarios_pendientes": [],
+  "errores": [
+    {
+      "alumno": "german rodriguez",
+      "paso": "nota",
+      "error": "<HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/851018360619/studentSubmissions/Cg0I4u2V0U0Qq86WpeIY?updateMask=draftGrade&alt=json returned \"@Projec"
+    },
+    {
+      "alumno": "Mateo Cuevas",
+      "paso": "nota",
+      "error": "<HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/851018360619/studentSubmissions/Cg4I1ZO5_scBEKvOlqXiGA?updateMask=draftGrade&alt=json returned \"@Proj"
+    },
+    {
+      "alumno": "santino dominguez",
+      "paso": "nota",
+      "error": "<HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/851018360619/studentSubmissions/Cg4I56i_mLIIEKvOlqXiGA?updateMask=draftGrade&alt=json returned \"@Proj"
+    },
+    {
+      "alumno": "Benjamin Barboza",
+      "paso": "nota",
+      "error": "<HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/851018360619/studentSubmissions/Cg4IvIv_8NMIEKvOlqXiGA?updateMask=draftGrade&alt=json returned \"@Proj"
+    },
+    {
+      "alumno": "Santino Massa",
+      "paso": "nota",
+      "error": "<HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/851018360619/studentSubmissions/Cg4I-_ftpoAJEKvOlqXiGA?updateMask=draftGrade&alt=json returned \"@Proj"
+    },
+    {
+      "alumno": "sebastian flores",
+      "paso": "nota",
+      "error": "<HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/851018360619/studentSubmissions/Cg4IsLTm1LEJEKvOlqXiGA?updateMask=draftGrade&alt=json returned \"@Proj"
+    },
+    {
+      "alumno": "Patricio amato",
+      "paso": "nota",
+      "error": "<HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/851018360619/studentSubmissions/Cg4IuPeq4cUREKvOlqXiGA?updateMask=draftGrade&alt=json returned \"@Proj"
+    }
+  ]
+}

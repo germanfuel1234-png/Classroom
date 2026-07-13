@@ -1,0 +1,3 @@
+Chicos descargar la herramienta ensamblador de pc. y el objetivo es armar una computadora de forma virtual!
+
+winrar->adobe->simulador

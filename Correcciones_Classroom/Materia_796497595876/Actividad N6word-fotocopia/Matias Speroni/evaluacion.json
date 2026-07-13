@@ -1,0 +1,11 @@
+{
+  "estado": "Rehacer",
+  "nota": 1,
+  "motivo": "Entrega no pertinente (validación IA). La ENTREGA solo presenta datos de identificación del trabajo (materia, profesor, alumnos, curso, año, título de la actividad), pero no incluye las fotocopias solicitadas en la consigna ('Realizar a la perfección las fotocopias'). No hay evidencia de la realización de la actividad.",
+  "feedback": "La entrega no corresponde de forma directa a la consigna del TP. Por favor, rehace y vuelve a subir una resolución específica de la actividad solicitada.",
+  "alumno": "Matias Speroni",
+  "materia": "Materia_796497595876",
+  "actividad": "Actividad N°6(word-fotocopia)",
+  "archivos_descargados": 1,
+  "fecha": "2026-06-18T10:57:43.307082"
+}

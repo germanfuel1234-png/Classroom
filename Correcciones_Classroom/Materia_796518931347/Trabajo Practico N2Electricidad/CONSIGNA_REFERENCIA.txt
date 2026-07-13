@@ -1,0 +1,33 @@
+╔══════════════════════════════════════════════╗
+║  CONSIGNA DE REFERENCIA PARA EVALUACIÓN     ║
+╚══════════════════════════════════════════════╝
+
+MATERIA: Materia_796518931347
+ACTIVIDAD: Trabajo Practico N°2(Electricidad)
+FECHA DESCARGA: 2026-06-17 20:25:51
+
+======================================================================
+
+[CONTENIDO EXTRAÍDO AUTOMÁTICAMENTE DE CLASSROOM]
+
+Trabajo Practico N°2(Electricidad)
+Trabajo Practico N°2
+Electricidad
+¿Qué es Corriente eléctrica?
+¿Qué es Corriente alterna?
+¿Qué es Corriente continua?
+¿Qué es Que es el voltaje?
+¿Qué es el amperaje?
+¿Qué es la potencia?
+¿Qué es un fusible y que función cumple?
+¿Qué es una llave termomagnética y que función cumple?
+¿Qué es un disyuntor diferencial y que función cumple?
+¿Qué es  y que función cumple una UPS?
+¿Qué es un estabilizador de tensión?
+Indique las normas de seguridad e higiene en electricidad
+Indicar el código de colores de los cables de electricidad
+
+======================================================================
+⚠️  NOTA: Si la consigna anterior está incompleta o solo contiene URLs,
+   edita este archivo manualmente para mejorar la descripción.
+   Esto mejorará la consistencia de las evaluaciones automáticas.

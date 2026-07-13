@@ -1,0 +1,11 @@
+{
+  "estado": "Adeuda entrega",
+  "nota": 1,
+  "motivo": "Entrega sin material adjunto verificable.",
+  "feedback": "Se registró una entrega pero sin archivos adjuntos. Asegúrate de adjuntar tu trabajo.",
+  "alumno": "Gonzalo Lozano",
+  "materia": "Materia_796497595876",
+  "actividad": "Actividad Nº5(Doc. Maestro)",
+  "archivos_descargados": 0,
+  "fecha": "2026-06-18T10:59:33.694100"
+}
