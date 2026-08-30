@@ -1,9 +1,0 @@
-[
-  {
-    "alumno": "german rodriguez",
-    "link": "https://classroom.google.com/c/ODUxMDE4MzYwNTg2/a/ODUxMDE4MzYwNjE5/submissions/by-status/and-sort-last-name/student/MjA4Mzk3NTc1Mzha",
-    "nota": 1,
-    "comentario_privado": "La entrega no corresponde de forma directa a la consigna del TP. Por favor, rehace y vuelve a subir una resolución específica de la actividad solicitada.",
-    "error_api": "<HttpError 403 when requesting https://classroom.googleapis.com/v1/courses/851018360586/courseWork/851018360619/studentSubmissions/Cg0I4u2V0U0Qq86WpeIY?updateMask=draftGrade&alt=js"
-  }
-]

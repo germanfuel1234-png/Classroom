@@ -1,8 +1,0 @@
-#Promedio de un producto
-precio1=float(input("Introduzca el primer precio: "))
-precio2=float(input("Introduzca el segundo precio: "))
-precio3=float(input("Introduzca el tercer precio: "))
-
-promedio=(precio1+precio2+precio3)/3
-
-print(f"El precio promedio del producto es {promedio} pesos")

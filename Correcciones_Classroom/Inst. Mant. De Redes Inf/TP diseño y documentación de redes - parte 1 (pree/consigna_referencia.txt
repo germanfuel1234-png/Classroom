@@ -1,7 +1,0 @@
-Incluye las etapas de "Análisis de requerimientos" y "Especificación de requerimientos".
-Documentación de:
-- Carátula
-- Introducción y objetivos
-- Entrevista
-- Topología física (plano)
-- Presupuesto preliminar

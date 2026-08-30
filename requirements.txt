@@ -1,10 +1,11 @@
 # Dependencias Principales
-google-auth==2.29.0
-google-auth-oauthlib==1.2.0
-google-auth-httplib2==0.2.0
-google-api-python-client==1.12.5
-google-generativeai==0.8.1
-python-dotenv==1.0.1
+google-auth==2.57.0
+google-auth-oauthlib==1.4.1
+google-auth-httplib2==0.4.2
+google-api-python-client==2.199.0
+google-genai==2.20.0
+openai==3.4.0  # usado para llamar a DeepSeek (API compatible con OpenAI)
+python-dotenv==1.2.3
 PyPDF2==3.0.1
 pdf2image==1.17.0
 pytesseract==0.3.13
@@ -12,6 +13,13 @@ Pillow==12.2.0
 python-docx==1.1.0
 pyautogui==0.9.54
 openpyxl==3.1.2
+
+# Panel de control (panel_control/)
+streamlit==1.62.0
+pandas==3.0.5
+streamlit-agraph==0.0.45  # organigrama interactivo (nodos clickeables)
+streamlit-autorefresh==1.0.1  # auto-actualización opcional del panel
+requests==2.34.2  # prender/apagar y chequear la IA local (Ollama)
 
 # Dependencias Secundarias (instaladas automáticamente)
 # googleapis-common-protos==1.63.0

@@ -1,7 +1,0 @@
-#Nombre y edad
-nombre=input("Ingrese su nombre: \n")
-edad=int(input("Ingrese su edad: \n"))
-if edad<=17:
-    print(f"Eres menor de edad\n")
-else:
-    print(f"Eres mayor de edad\n")

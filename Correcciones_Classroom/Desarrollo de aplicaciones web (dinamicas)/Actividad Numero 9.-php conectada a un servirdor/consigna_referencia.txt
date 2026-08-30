@@ -1,3 +1,0 @@
-En este parte de
-la materia veremos lo fuerte de ella, la misma cuanta con conectar nuestra página
-web(php) al servidor de una base de datos “my sql” con “xampp”

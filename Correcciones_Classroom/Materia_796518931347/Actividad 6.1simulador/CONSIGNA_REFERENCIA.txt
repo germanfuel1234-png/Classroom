@@ -1,9 +1,0 @@
-MATERIA: Materia_796518931347
-ACTIVIDAD: Actividad 6.1(simulador)
-FECHA DESCARGA: 2026-06-17 20:00:45
-======================================================================
-
-Actividad 6.1(simulador)
-Chicos descargar la herramienta ensamblador de pc. y el objetivo es armar una computadora de forma virtual!
-
-winrar->adobe->simulador

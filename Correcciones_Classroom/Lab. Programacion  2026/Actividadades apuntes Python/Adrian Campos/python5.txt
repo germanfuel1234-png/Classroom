@@ -1,7 +1,0 @@
-#Suma de numeros hasta ingresar 0
-suma=0
-num=int(input(f"Ingrese un numero: \n"))
-while num != 0:
-    suma=suma+num
-    num=int(input(f"Ingrese un numero: \n"))
-print(f"La suma total sería {suma}")

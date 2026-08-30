@@ -1,3 +1,19 @@
 .env
 token.json
+.venv/
 __pycache__/
+*.pyc
+panel_control/panel.db
+
+# Credenciales OAuth (mantenida en el historial por decisión del profesor, pero no se sigue versionando)
+classroom_nuevo.json
+
+# Datos reales de alumnos (nombres, entregas, notas) — quedan locales, no se suben más
+Correcciones_Classroom/
+evaluaciones_completas.xlsx
+evaluaciones_masivas.json
+
+# Salidas generadas por los agentes (Mejorador/Evaluador/Cuaderno) — contenido, no código fuente
+Actividades_Mejoradas/
+Evaluaciones/
+Planillas_Institucionales/

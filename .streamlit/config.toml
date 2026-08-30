@@ -1,0 +1,11 @@
+[client]
+# Panel local con notas/datos de alumnos: nunca debe ofrecerse a publicar
+# en la nube pública, así que se oculta el botón "Deploy".
+toolbarMode = "minimal"
+
+[theme]
+base = "dark"
+primaryColor = "#71EF8A"
+backgroundColor = "#0C0F10"
+secondaryBackgroundColor = "#141A1B"
+textColor = "#E0ECE9"

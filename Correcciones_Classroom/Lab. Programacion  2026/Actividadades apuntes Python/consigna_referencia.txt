@@ -1,1 +1,0 @@
-Subir las actividades (ejercicios realizados en python y copiarlos en la carpeta)

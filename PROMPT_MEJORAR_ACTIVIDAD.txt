@@ -1,0 +1,90 @@
+==============================================================
+ PLANTILLA — Mejorar una actividad de Classroom con IA (gratis)
+==============================================================
+
+Este archivo es el mismo prompt que usa el Agente Mejorador del panel,
+para que lo puedas usar a mano cuando se te acabe la cuota gratis de
+Gemini o DeepSeek. El resultado va a tener la misma estructura y las
+mismas exigencias de siempre (carátula, preguntas transcriptas, etc.).
+
+CÓMO USARLO:
+  1. Completá los 3 datos de la sección A (materia, diseño curricular
+     si lo tenés, y el enunciado original de tu TP).
+  2. Copiá TODO el texto de la sección B (desde la línea de guiones de
+     abajo hasta el final del archivo) — ya viene armado con lo que
+     completaste en la sección A.
+  3. Pegalo en cualquier IA gratuita (ChatGPT, Gemini, Claude, Copilot,
+     Meta AI, etc.) y enviá.
+  4. Te va a devolver el TP mejorado, listo para revisar y subir a
+     Classroom (a mano, o pegándolo en el Agente Mejorador del panel
+     con "Subir y sustituir" cuando quieras que quede prolijo en docx).
+
+--------------------------------------------------------------
+ SECCIÓN A — Completá esto antes de copiar la sección B
+--------------------------------------------------------------
+
+MATERIA:
+[Ej: Sistemas Digitales]
+
+DISEÑO CURRICULAR DE REFERENCIA (opcional — pegá 2 o 3 líneas si las
+tenés a mano; si no tenés, dejá esta línea como está y la IA va a
+respetar igual el diseño curricular vigente que ya conoce):
+[Pegá acá o dejá "no disponible"]
+
+ENUNCIADO ORIGINAL DEL TRABAJO PRÁCTICO (copialo tal cual está publicado
+en Classroom, con todo: consigna, preguntas, materiales que menciona):
+[Pegá acá el enunciado completo]
+
+--------------------------------------------------------------
+ SECCIÓN B — Copiá desde acá hacia abajo y pegalo en la IA
+--------------------------------------------------------------
+
+Sos un especialista en diseño curricular y didáctica de la educación técnica secundaria.
+Te paso el enunciado ORIGINAL de un Trabajo Práctico de la materia "[COMPLETÁ: MATERIA]".
+
+Generá una VERSIÓN MEJORADA de ESA MISMA actividad: mismo objetivo de aprendizaje, mismo tema
+y mismo alcance, pero redactada de forma más didáctica, más técnica y mejor organizada,
+respetando el diseño curricular vigente para esta materia. NO es un TP nuevo ni de otro tema:
+es el mismo TP, prolijo y mejor explicado.
+
+No inventes contenido ajeno al original ni cambies el tema del trabajo.
+
+---- DISEÑO CURRICULAR DE REFERENCIA (respetalo al mejorar) ----
+[COMPLETÁ ACÁ, o borrá esta sección si pusiste "no disponible" arriba]
+
+Devolvé el resultado con esta estructura, respetando los números y títulos tal cual:
+
+1. Título
+
+2. Objetivos de aprendizaje (2-4 puntos)
+
+3. Consigna mejorada (redacción clara, pasos numerados si aplica)
+
+4. Contenidos técnicos/conceptuales involucrados
+
+5. Criterios de evaluación / rúbrica breve
+
+6. Forma de entrega — copiá TAL CUAL esta lista, es una exigencia fija del profesor para
+toda entrega, no la resumas ni la cambies:
+1. CARÁTULA: la primera hoja debe ser una carátula/portada (diseño libre del alumno); el
+documento no debe arrancar directamente con las preguntas.
+2. PREGUNTAS TRANSCRITAS: en la segunda hoja deben estar transcriptas las preguntas/consignas
+de la actividad, antes de empezar a responder.
+3. FORMATO DE RESPUESTA APROPIADO: cada respuesta debe estar en el formato que esa pregunta
+puntual pide — texto si es una pregunta abierta, tabla si pide comparar/tabular datos, o una
+imagen/captura de código si pide programar o mostrar código.
+4. IMAGEN ILUSTRATIVA: en algún punto del trabajo debe haber al menos una imagen o foto que
+ayude a la comprensión lectora del tema (ej. una foto de un capacitor si el tema es capacitores,
+una captura de Linux/Windows si el tema es sistemas operativos, una foto de un componente de
+hardware, etc.), relacionada de verdad con el tema.
+
+Al principio del documento, antes del título, poné esta línea tal cual (va a hacer de
+encabezado de página cuando lo pases a Word):
+"[COMPLETÁ: MATERIA] — Prof. Rodríguez G."
+
+---- ENUNCIADO ORIGINAL ----
+[PEGÁ ACÁ EL MISMO ENUNCIADO ORIGINAL QUE COMPLETASTE EN LA SECCIÓN A]
+
+--------------------------------------------------------------
+ FIN DEL PROMPT — hasta acá es lo que copiás y pegás
+--------------------------------------------------------------

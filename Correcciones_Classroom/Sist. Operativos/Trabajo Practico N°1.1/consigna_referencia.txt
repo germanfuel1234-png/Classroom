@@ -1,6 +1,0 @@
-Bibliografía utilizada para la elaboración de los módulos del área
-STALLINGS WILLIAM, “Comunicaciones y Redes de Computadores”, Prentice-Hall, Madrid, 2013.
-HAYES JIM Y ROSENBERG PAUL, “Cableado de Redes para Voz, Video y Datos”, Editorial Cengage Learning, Madrid, 2009.
-TROPEANO FRANCISCO, “Introducción al Procesamiento y Transmisión de Datos”,  Editorial Alsina, Buenos Aires, 2006. 
-HALSALL FRED, “Comunicación de Datos, Redes de Computadores y Sistemas Abiertos”, Editorial Pearson Educación, Madrid, 1998.
-CASTRO LECHTALER ANTONIO R., “Teleinformática para Ingenieros en Sistemas de Información (Tomos I y II)”, Editorial Reverte, Buenos Aires, 1999.

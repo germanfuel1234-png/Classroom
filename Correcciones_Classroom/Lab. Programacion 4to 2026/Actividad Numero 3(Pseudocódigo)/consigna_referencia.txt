@@ -1,3 +1,0 @@
-cm a M= 100cm a 1M
-celcius a fahrenheit=(0 °C × 9/5) + 32 = 32 °F
-milas a kilometros = 1M a 1.0609Km

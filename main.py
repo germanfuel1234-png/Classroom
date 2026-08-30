@@ -80,6 +80,9 @@ SCOPES = [
     "https://www.googleapis.com/auth/classroom.rosters.readonly",
     "https://www.googleapis.com/auth/drive.readonly",
     "https://www.googleapis.com/auth/gmail.send",               # ✅ Envío de feedback por email
+    "https://www.googleapis.com/auth/forms.body",                # ✅ Crear el Form de consultas (Agente Consultas)
+    "https://www.googleapis.com/auth/forms.responses.readonly",   # ✅ Leer las consultas que responden los alumnos
+    "https://www.googleapis.com/auth/classroom.announcements",    # ✅ Publicar anuncios (Agente Publicador / Licencias)
 ]
 
 
@@ -738,6 +741,154 @@ def _analizar_formatos_adjuntos(attachments, service_drive):
     return analisis
 
 
+def verificar_formato_entrega(attachments, service_drive):
+    """
+    Chequeo de FORMATO de presentación (exigencia fija del profesor para toda
+    entrega, más allá de lo que pida la consigna puntual):
+      1. Carátula como primera hoja
+      2. Preguntas transcritas en la segunda hoja
+      3. Respuestas en el formato que pide cada pregunta (texto / tabla / código en imagen)
+      4. Al menos una imagen ilustrativa relacionada al tema
+
+    A diferencia del resto del pipeline (que solo lee texto extraído), esto le
+    manda a Gemini el PDF/imagen REAL de la entrega para que la "vea" página
+    por página — si no, no hay forma de saber si hay una carátula o una foto
+    de un capacitor. Los .docx subidos directamente (no Google Doc) se saltean
+    porque no hay una forma simple de convertirlos a algo visualmente inspeccionable.
+
+    No afecta la nota: el resultado es solo informativo para la devolución.
+    Devuelve un dict o None si no se pudo evaluar (sin adjunto visualmente
+    inspeccionable, o sin GEMINI_API_KEY).
+    """
+    if not attachments or not service_drive:
+        return None
+
+    for adj in attachments[:3]:
+        drive_file = _obtener_drive_file_desde_attachment(adj)
+        if not drive_file:
+            continue
+        file_id = drive_file.get("id")
+        file_name = drive_file.get("title", "archivo")
+        if not file_id:
+            continue
+
+        try:
+            metadata = service_drive.files().get(fileId=file_id, fields="mimeType").execute()
+            mime_type = metadata.get("mimeType", "")
+        except Exception:
+            mime_type = ""
+
+        nombre_l = (file_name or "").lower()
+        es_google_doc = mime_type == "application/vnd.google-apps.document"
+        es_pdf = nombre_l.endswith(".pdf") or mime_type == "application/pdf"
+        es_imagen = mime_type.startswith("image/") or nombre_l.endswith((".jpg", ".jpeg", ".png", ".webp"))
+
+        if not (es_google_doc or es_pdf or es_imagen):
+            continue
+
+        try:
+            if es_google_doc:
+                # Exportar como PDF (no .docx) para poder inspeccionarlo página por página.
+                request = service_drive.files().export_media(fileId=file_id, mimeType="application/pdf")
+                buffer = io.BytesIO()
+                downloader = MediaIoBaseDownload(buffer, request)
+                done = False
+                while not done:
+                    _, done = downloader.next_chunk()
+                contenido_bytes = buffer.getvalue()
+                mime_envio = "application/pdf"
+            else:
+                contenido_bytes = descargar_adjunto_drive(service_drive, file_id, mime_type)
+                mime_envio = "application/pdf" if es_pdf else (mime_type or "image/jpeg")
+        except Exception as e:
+            print(f"      ⚠️ No se pudo descargar '{file_name}' para chequeo de formato: {str(e)[:120]}")
+            continue
+
+        if not contenido_bytes:
+            continue
+
+        return _verificar_formato_con_ia(contenido_bytes, mime_envio)
+
+    return None
+
+
+def _verificar_formato_con_ia(contenido_bytes, mime_type):
+    api_key = os.environ.get("GEMINI_API_KEY", "").strip()
+    if not api_key:
+        return None
+
+    from panel_control.rubrica_entrega import REQUISITOS_FORMATO_ENTREGA
+
+    prompt_formato = (
+        "Sos un asistente que revisa el FORMATO de presentación de un trabajo práctico escolar "
+        "(no el contenido académico, eso lo evalúa otro proceso aparte). El profesor exige siempre "
+        "estos 4 requisitos de presentación en toda entrega:\n\n"
+        f"{REQUISITOS_FORMATO_ENTREGA}\n\n"
+        "Sobre el punto 4 (imagen ilustrativa): evaluá si la imagen presente está realmente "
+        "relacionada al tema o es irrelevante/decorativa.\n\n"
+        "Mirá el documento adjunto (las páginas/imágenes reales, no un resumen) y respondé ÚNICAMENTE "
+        "con este JSON, sin texto adicional ni markdown:\n"
+        "{\n"
+        '  "tiene_caratula": true/false,\n'
+        '  "preguntas_transcritas": true/false,\n'
+        '  "formato_respuestas_apropiado": true/false,\n'
+        '  "tiene_imagen_ilustrativa": true/false,\n'
+        '  "imagen_relacionada_al_tema": true/false/null,\n'
+        '  "observaciones": "1-2 frases concretas, en segunda persona, sobre qué falta o qué está bien"\n'
+        "}\n"
+    )
+
+    try:
+        client = genai.Client(api_key=api_key)
+        respuesta = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=[
+                prompt_formato,
+                genai.types.Part.from_bytes(data=contenido_bytes, mime_type=mime_type),
+            ],
+        )
+        texto = (getattr(respuesta, "text", "") or "").strip()
+        texto = texto.strip("`")
+        if texto.lower().startswith("json"):
+            texto = texto[4:].strip()
+        return json.loads(texto)
+    except Exception as e:
+        print(f"      ⚠️ Chequeo de formato con IA falló: {str(e)[:150]}")
+        return None
+
+
+def _agregar_observaciones_formato(feedback, resultado_formato):
+    """Le agrega al feedback una sección sobre el formato de presentación,
+    sin tocar la nota (por ahora es solo informativo)."""
+    if not resultado_formato:
+        return feedback
+
+    faltantes = []
+    if resultado_formato.get("tiene_caratula") is False:
+        faltantes.append("la carátula en la primera hoja")
+    if resultado_formato.get("preguntas_transcritas") is False:
+        faltantes.append("transcribir las preguntas en la segunda hoja")
+    if resultado_formato.get("formato_respuestas_apropiado") is False:
+        faltantes.append("el formato correcto en algunas respuestas (texto/tabla/código según corresponda)")
+    if resultado_formato.get("tiene_imagen_ilustrativa") is False:
+        faltantes.append("una imagen ilustrativa relacionada al tema")
+    elif resultado_formato.get("imagen_relacionada_al_tema") is False:
+        faltantes.append("una imagen ilustrativa que esté realmente relacionada al tema (la que pusiste no aplica)")
+
+    observaciones = (resultado_formato.get("observaciones") or "").strip()
+
+    if not faltantes:
+        extra = f" {observaciones}" if observaciones else ""
+        return feedback + f"\n\n📋 Formato de entrega: cumple con los requisitos de presentación exigidos.{extra}"
+
+    lista = "; ".join(faltantes)
+    extra = f" {observaciones}" if observaciones else ""
+    return feedback + (
+        f"\n\n📋 Formato de entrega: te faltó {lista}.{extra} "
+        "(Esto no afectó tu nota esta vez, pero es un requisito fijo de la materia — corregilo para la próxima entrega.)"
+    )
+
+
 def _extraer_texto_de_materiales_consigna(materiales, service_drive):
     """Extrae texto de materiales adjuntos a la consigna del TP."""
     if not materiales:
@@ -1192,10 +1343,16 @@ def evaluar_entrega_automatica(alumno, tp, service_drive, contexto_consigna=""):
     
     # PASO 5: Generar feedback personalizado basado en concordancia
     feedback = _generar_feedback_personalizado(
-        tp, nota, concordancia_score, temas_cubiertos, temas_faltantes, 
+        tp, nota, concordancia_score, temas_cubiertos, temas_faltantes,
         contexto_consigna, obs_concordancia
     )
-    
+
+    # PASO 5.5: Chequeo de formato de presentación (carátula, preguntas
+    # transcritas, formato de respuesta, imagen ilustrativa). Informativo:
+    # no modifica `nota`.
+    resultado_formato = verificar_formato_entrega(attachments, service_drive)
+    feedback = _agregar_observaciones_formato(feedback, resultado_formato)
+
     # Determinar estado
     if nota < 4:
         estado_resultado = "No Aprobado"

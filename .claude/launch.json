@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "panel-classroom",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "source .venv/bin/activate && streamlit run panel_control/dashboard.py --server.port $PORT --server.headless true --server.address 0.0.0.0"],
+      "port": 8501,
+      "autoPort": true
+    }
+  ]
+}
