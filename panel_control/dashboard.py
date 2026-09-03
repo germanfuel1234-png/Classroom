@@ -21,8 +21,9 @@ import main as classroom  # reutiliza OAuth y listados ya probados
 from panel_control import agente_consultas, agente_corrector, agente_director, agente_evaluador, agente_licencias, agente_mejorador, agente_publicador, anios, cuaderno, horario, ia_local, materiales, memoria, sync_materias
 from panel_control.scripts import buscar_recursos_bulk, sincronizar_actividades
 from panel_control.estilos import CSS
+from panel_control.identidad import NOMBRE_PROFESOR
 
-st.set_page_config(page_title="Classroom · Panel de Agentes", layout="wide")
+st.set_page_config(page_title="Classroom · Panel de Agentes", page_icon="🎓", layout="wide", initial_sidebar_state="expanded")
 st.markdown(CSS, unsafe_allow_html=True)
 
 # Paleta tomada del mockup de referencia (index-design.html): verde neón como
@@ -35,6 +36,13 @@ COLOR_AREA = {
     "Licencias": "#FF6B6B",
 }
 COLOR_INACTIVO = "#5c6773"
+COLOR_TIPO = {
+    "actividad_mejorada": "#71EF8A",
+    "diseno_curricular": "#E6AD30",
+}
+COLOR_TIPO_DEFAULT = "#3FA7FF"
+COLOR_CURSO = "#E6AD30"
+COLOR_AGENTE_MEMORIA = "#E0ECE9"
 
 AGENTE_ICONOS = {
     "Director": "🧭",
@@ -187,12 +195,45 @@ if aprobaciones_pendientes:
         "pestaña **Aprobaciones** para revisarlos."
     )
 
-tab_centro, tab_canal, tab_ejecutar, tab_org, tab_aprobaciones, tab_materias, tab_cuaderno, tab_cola, tab_memoria, tab_anio = st.tabs(
-    ["Centro de Operaciones", "📡 Canal IA", "🚀 Ejecutar agentes", "Organigrama", f"Aprobaciones ({len(aprobaciones_pendientes)})",
-     "Materias", "📓 Cuaderno", "Cola de tareas", "Memoria compartida", "📅 Año lectivo"]
-)
+PAGINAS = [
+    ("centro", "🏠", "Centro de Operaciones", None),
+    ("canal", "📡", "Canal IA", None),
+    ("ejecutar", "🚀", "Ejecutar agentes", None),
+    ("org", "🗂️", "Organigrama", None),
+    ("aprobaciones", "✅", "Aprobaciones", len(aprobaciones_pendientes)),
+    ("materias", "📚", "Materias", None),
+    ("cuaderno", "📓", "Cuaderno", None),
+    ("cola", "📋", "Cola de tareas", None),
+    ("memoria", "🧠", "Memoria compartida", None),
+    ("anio", "📅", "Año lectivo", None),
+]
+if "pagina_actual" not in st.session_state:
+    st.session_state["pagina_actual"] = "centro"
 
-with tab_canal:
+with st.sidebar:
+    st.markdown("### 🎓 Panel de Agentes")
+    st.caption(NOMBRE_PROFESOR)
+    st.divider()
+    for clave, icono, etiqueta, badge in PAGINAS:
+        activa = st.session_state["pagina_actual"] == clave
+        texto_boton = f"{icono}  {etiqueta}" + (f"  · {badge}" if badge else "")
+        if st.button(texto_boton, key=f"nav_{clave}", width="stretch", type="primary" if activa else "secondary"):
+            st.session_state["pagina_actual"] = clave
+            st.rerun()
+
+pagina_actual = st.session_state["pagina_actual"]
+
+if pagina_actual == "canal":
+    with st.expander("❓ ¿Cómo uso esta sección?"):
+        st.markdown(
+            "Acá cada agente va dejando, como si fuera un chat, qué hizo — un TP nuevo, una "
+            "corrección, un aviso. Es solo para que veas la actividad de un vistazo, no hace "
+            "falta que hagas nada acá.\n\n"
+            "- El botón **🧭 Pedir resumen del Director** es el único que genera algo nuevo (con "
+            "IA) — un parte de situación corto. No lo hace solo, se lo pedís cuando quieras.\n"
+            "- Nada de lo que ves acá se publicó en Classroom todavía — eso pasa siempre en la "
+            "pestaña **Aprobaciones**."
+        )
     st.subheader("📡 Canal IA")
     st.caption(
         "Cada vez que un agente hace algo, deja acá su aporte — como un chat entre las IA. "
@@ -222,7 +263,15 @@ with tab_canal:
                 partes_caption.append(t["estado"])
                 st.caption(" · ".join(partes_caption))
 
-with tab_centro:
+elif pagina_actual == "centro":
+    with st.expander("❓ ¿Cómo uso esta sección?"):
+        st.markdown(
+            "El punto de partida del día: acá escribís vos la prioridad del momento (nadie la "
+            "inventa sola), ves qué tareas están sin resolver, prendés/apagás agentes puntuales "
+            "(por ejemplo si querés enfocarte en mejorar actividades y no que Publicador/Licencias "
+            "hagan nada mientras tanto), y controlás la IA local (Ollama) y cuánto usaste hoy de "
+            "cada proveedor de IA."
+        )
     st.subheader("🎯 Directiva actual")
     directiva_actual = memoria.obtener_directiva()
     nueva_directiva = st.text_area(
@@ -342,7 +391,16 @@ with tab_centro:
         for col, (proveedor, cantidad) in zip(cols_uso, uso_hoy.items()):
             col.metric(proveedor.capitalize(), cantidad)
 
-with tab_ejecutar:
+elif pagina_actual == "ejecutar":
+    with st.expander("❓ ¿Cómo uso esta sección?"):
+        st.markdown(
+            "Acá es donde ponés a trabajar a cada agente: corregir una actividad, redactar un "
+            "TP o anuncio nuevo, mejorar una actividad existente, armar una evaluación, revisar "
+            "consultas de alumnos, o avisar una licencia. **Ninguno de estos botones publica nada "
+            "en Classroom directamente** — todos dejan un borrador esperando tu revisión en la "
+            "pestaña **Aprobaciones**. Un agente apagado (desde Centro de Operaciones) no te va a "
+            "dejar generar nada nuevo con él hasta que lo prendas."
+        )
     st.caption(
         "Corré los agentes desde acá, sin abrir la terminal. Ninguno publica nada solo: "
         "los que generan contenido dejan el borrador esperando en Aprobaciones."
@@ -733,7 +791,13 @@ with tab_ejecutar:
                     except Exception as e:
                         st.error(mensaje_error_amigable(e))
 
-with tab_org:
+elif pagina_actual == "org":
+    with st.expander("❓ ¿Cómo uso esta sección?"):
+        st.markdown(
+            "Un mapa de quién es quién: los agentes que trabajan para vos, con su rol y su área. "
+            "Es solo para consulta — no hay nada para configurar acá. Si querés prender o apagar "
+            "un agente, eso se hace en **Centro de Operaciones**."
+        )
     if not st.session_state.get("ver_organigrama", False):
         st.info("El organigrama es un gráfico interactivo. Se carga recién al abrir esta pestaña (así el gráfico no se inicializa oculto y se rompe).")
         if st.button("▶ Mostrar organigrama", key="ver_organigrama_btn"):
@@ -828,7 +892,14 @@ with tab_org:
                 else:
                     st.info("Hacé clic en un nodo del organigrama para ver su detalle.")
 
-with tab_aprobaciones:
+elif pagina_actual == "aprobaciones":
+    with st.expander("❓ ¿Cómo uso esta sección?"):
+        st.markdown(
+            "Acá termina todo lo que un agente generó: correcciones, avisos, TPs nuevos, "
+            "bibliografía para adjuntar. **Nada se publica en Classroom hasta que vos lo apruebes "
+            "acá con un click** — antes de aprobar podés editar el texto o rechazarlo. Es el único "
+            "lugar del panel donde una acción sale de verdad hacia afuera."
+        )
     st.caption(
         "Human-in-the-loop: ningún agente manda nada hacia afuera (emails, publicaciones) sin que "
         "lo apruebes acá primero. Podés editar el borrador antes de aprobarlo."
@@ -1081,7 +1152,17 @@ with tab_aprobaciones:
                     st.markdown(f"**{ap['tipo']}**")
                     st.json(datos)
 
-with tab_materias:
+elif pagina_actual == "materias":
+    with st.expander("❓ ¿Cómo uso esta sección?"):
+        st.markdown(
+            "El detalle materia por materia: actividades ya publicadas, temas dados, alumnos y sus "
+            "métricas. Empezá eligiendo la materia arriba. El botón **🔄 Traer de Classroom** trae lo "
+            "último que hayas publicado o modificado allá — usalo después de cualquier cambio hecho "
+            "directo en Classroom, para que el panel quede sincronizado.\n\n"
+            "Desde acá también podés **editar una actividad** o **adjuntarle bibliografía** — ambas "
+            "acciones dejan un borrador esperando aprobación en la pestaña **Aprobaciones**, nunca "
+            "se publican solas."
+        )
     st.subheader("📎 Actividades y materiales")
     st.caption(
         "Todo se lee directo de tu base local (panel.db) — no hace falta tocar Classroom para "
@@ -1373,7 +1454,14 @@ with tab_materias:
                         df_alumnos = df_alumnos.sort_values("Nombre")
                         st.dataframe(df_alumnos, width="stretch", hide_index=True)
 
-with tab_cuaderno:
+elif pagina_actual == "cuaderno":
+    with st.expander("❓ ¿Cómo uso esta sección?"):
+        st.markdown(
+            "Tu cuaderno de aula, pero digital: comunicados a las familias, asistencia por clase, y "
+            "la planilla de notas con el mismo formato institucional que ya usás en papel. Todo se "
+            "carga a mano y queda guardado en tu base local — no hay IA acá ni nada que se publique "
+            "en Classroom. Desde la planilla podés exportar un Excel con el formato oficial."
+        )
     st.subheader("📓 Cuaderno")
     st.caption(
         "Comunicados, asistencia y planilla institucional — todo se guarda en tu base local. "
@@ -1548,7 +1636,13 @@ with tab_cuaderno:
                 else:
                     st.caption("Todavía no hay ninguna nota final cargada.")
 
-with tab_cola:
+elif pagina_actual == "cola":
+    with st.expander("❓ ¿Cómo uso esta sección?"):
+        st.markdown(
+            "El historial completo de todo lo que hizo cada agente, con filtros por agente y por "
+            "curso. Útil para auditar qué pasó y cuándo — no hay acciones para tomar acá, es solo "
+            "consulta."
+        )
     todos_los_agentes = ["todos"] + [a["nombre"] for a in memoria.listar_agentes()]
     todos_los_cursos = ["todas"] + sorted({t["curso"] for t in memoria.listar_tareas(limite=2000) if t["curso"]})
 
@@ -1572,15 +1666,12 @@ with tab_cola:
         df.columns = ["Cuándo", "Área", "Agente", "Curso", "Tarea", "Estado"]
         st.dataframe(df, width='stretch', hide_index=True)
 
-COLOR_TIPO = {
-    "actividad_mejorada": "#71EF8A",
-    "diseno_curricular": "#E6AD30",
-}
-COLOR_TIPO_DEFAULT = "#3FA7FF"
-COLOR_CURSO = "#E6AD30"
-COLOR_AGENTE_MEMORIA = "#E0ECE9"
-
-with tab_memoria:
+elif pagina_actual == "memoria":
+    with st.expander("❓ ¿Cómo uso esta sección?"):
+        st.markdown(
+            "Un gráfico de qué agente tocó qué curso, para ver de un vistazo dónde se concentró el "
+            "trabajo últimamente. Es solo para consulta, no hay nada para configurar acá."
+        )
     if not st.session_state.get("ver_memoria", False):
         st.info("También es un gráfico interactivo, se carga recién al abrir esta pestaña.")
         if st.button("▶ Mostrar memoria compartida", key="ver_memoria_btn"):
@@ -1678,7 +1769,14 @@ with tab_memoria:
                 df = pd.DataFrame([dict(f) for f in entradas])
                 st.dataframe(df, width="stretch", hide_index=True)
 
-with tab_anio:
+elif pagina_actual == "anio":
+    with st.expander("❓ ¿Cómo uso esta sección?"):
+        st.markdown(
+            "Acá se define qué año lectivo está activo (todo el resto del panel — actividades, "
+            "alumnos, planillas — se filtra por este año) y se carga tu horario semanal, que "
+            "después usan otras secciones (por ejemplo para sugerir la fecha de un aviso de "
+            "licencia o de una clase en el Cuaderno)."
+        )
     anio_activo_fila = anios.anio_activo()
     st.subheader(f"📅 Año lectivo activo: {anio_activo_fila['anio']}")
 

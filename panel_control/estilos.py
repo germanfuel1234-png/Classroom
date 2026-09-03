@@ -189,6 +189,45 @@ button[data-testid="stBaseButton-secondary"]:hover {
   box-shadow: 0 0 0 3px var(--accent-faint) !important;
 }
 
+/* ===== SIDEBAR / MENÚ DE NAVEGACIÓN ===== */
+[data-testid="stSidebar"] {
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+}
+
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p,
+[data-testid="stSidebar"] [data-testid="stCaptionContainer"] {
+  color: var(--muted) !important;
+}
+
+[data-testid="stSidebar"] button[data-testid^="stBaseButton"] {
+  width: 100%;
+  justify-content: flex-start !important;
+  text-align: left !important;
+  border-radius: var(--r-sm) !important;
+  margin-bottom: 2px;
+}
+
+[data-testid="stSidebar"] button[data-testid="stBaseButton-secondary"] {
+  background: transparent !important;
+  border-color: transparent !important;
+  color: var(--fg) !important;
+}
+
+[data-testid="stSidebar"] button[data-testid="stBaseButton-secondary"]:hover {
+  background: var(--surface-alt) !important;
+  border-color: var(--border) !important;
+}
+
+[data-testid="stSidebar"] button[data-testid="stBaseButton-primary"] {
+  background: var(--accent-faint) !important;
+  color: var(--accent-light) !important;
+  border: none !important;
+  border-left: 3px solid var(--accent) !important;
+  box-shadow: none;
+  font-weight: 600 !important;
+}
+
 /* ===== SCROLLBAR (webkit) ===== */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
