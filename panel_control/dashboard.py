@@ -18,7 +18,7 @@ from streamlit_agraph import agraph, Config, Edge, Node
 from streamlit_autorefresh import st_autorefresh
 
 import main as classroom  # reutiliza OAuth y listados ya probados
-from panel_control import agente_consultas, agente_corrector, agente_director, agente_evaluador, agente_licencias, agente_mejorador, agente_publicador, anios, cuaderno, horario, ia_local, materiales, memoria, sync_materias
+from panel_control import agente_consultas, agente_corrector, agente_director, agente_evaluador, agente_licencias, agente_mejorador, agente_publicador, anios, autoarranque, cuaderno, horario, ia_local, materiales, memoria, sync_materias
 from panel_control.scripts import buscar_recursos_bulk, sincronizar_actividades
 from panel_control.estilos import CSS
 from panel_control.identidad import NOMBRE_PROFESOR
@@ -339,6 +339,27 @@ elif pagina_actual == "centro":
             nuevo_valor = st.toggle(f"{icono_ag} {nombre_ag}", value=activo_ag, key=f"toggle_agente_{nombre_ag}")
         if nuevo_valor != activo_ag:
             memoria.actualizar_estado_agente(nombre_ag, "activo" if nuevo_valor else "inactivo")
+            st.rerun()
+
+    st.divider()
+    st.subheader("🔒 Panel siempre encendido")
+    st.caption(
+        "Hoy este panel corre porque alguien lo arrancó a mano. Este botón lo deja preparado como "
+        "servicio del sistema (systemd) para que arranque solo cuando prendas la compu o cierres "
+        "sesión y vuelvas a entrar — no reinicia nada de lo que está corriendo ahora mismo."
+    )
+    if autoarranque.esta_activado():
+        st.write("🟢 Arranque automático activado")
+        if st.button("Desactivar", key="autoarranque_desactivar"):
+            ok_auto, msg_auto = autoarranque.desactivar_arranque_automatico()
+            (st.success if ok_auto else st.error)(msg_auto)
+            st.rerun()
+    else:
+        st.write("⚪ Arranque automático desactivado")
+        if st.button("🔌 Activar arranque automático", key="autoarranque_activar", type="primary"):
+            with st.spinner("Preparando el servicio..."):
+                ok_auto, msg_auto = autoarranque.activar_arranque_automatico()
+            (st.success if ok_auto else st.error)(msg_auto)
             st.rerun()
 
     st.divider()
@@ -1033,12 +1054,14 @@ elif pagina_actual == "aprobaciones":
                     else:
                         st.warning("El archivo local ya no existe (¿lo borraste?). No se puede aprobar.")
                     st.caption(
-                        "⚠️ Esto SACA el/los archivo(s) que ya estaban adjuntos en Classroom para esta "
-                        "actividad y deja solo este nuevo. Los links/videos ya adjuntos no se tocan."
+                        "⚠️ Classroom no deja reemplazar materiales de una actividad ya publicada por API "
+                        "— este botón sube el archivo a tu Drive (ya compartido, listo para elegir) y "
+                        "después te va a pedir que saques el archivo viejo y adjuntes este desde Drive "
+                        "vos mismo, con el link directo a la actividad a mano."
                     )
 
                     col_a, col_b = st.columns(2)
-                    if col_a.button("✅ Aprobar y reemplazar en Classroom", key=f"aprobar_{ap['id']}",
+                    if col_a.button("✅ Aprobar y subir a Drive", key=f"aprobar_{ap['id']}",
                                      type="primary", disabled=not archivo_ap):
                         try:
                             creds = classroom.obtener_credenciales()
@@ -1075,14 +1098,43 @@ elif pagina_actual == "aprobaciones":
                     else:
                         st.info("No hay recursos sugeridos en este borrador.")
 
+                    st.caption(
+                        "⚠️ Classroom no deja adjuntar materiales a una actividad ya publicada por API "
+                        "— este botón solo confirma la lista y te deja el link directo a la actividad "
+                        "para agregarlos vos mismo en un click."
+                    )
+
                     col_a, col_b = st.columns(2)
-                    if col_a.button("✅ Aprobar y adjuntar en Classroom", key=f"aprobar_{ap['id']}",
+                    if col_a.button("✅ Confirmar lista", key=f"aprobar_{ap['id']}",
                                      type="primary", disabled=not recursos_confirmados_bib):
                         try:
-                            creds = classroom.obtener_credenciales()
                             ok, mensaje = agente_publicador.aprobar_y_adjuntar_bibliografia(
-                                ap["id"], creds, recursos_confirmados_bib
+                                ap["id"], recursos_confirmados_bib
                             )
+                            if ok:
+                                st.success(mensaje)
+                                st.rerun()
+                            else:
+                                st.error(mensaje)
+                        except Exception as e:
+                            st.error(mensaje_error_amigable(e))
+                    if col_b.button("🗑️ Rechazar", key=f"rechazar_{ap['id']}"):
+                        agente_publicador.rechazar(ap["id"])
+                        st.rerun()
+
+                elif ap["tipo"] == "anuncio_global":
+                    st.markdown(f"**🎉 {datos.get('nombre_fecha', '')} — anuncio para TODAS las materias activas**")
+                    st.caption(f"Generado {hace(ap['creado_en'])}")
+                    mensaje_editado_fp = st.text_area(
+                        "Texto del anuncio (podés editarlo antes de aprobar)",
+                        value=datos.get("mensaje", ""), key=f"mensaje_fp_{ap['id']}", height=120,
+                    )
+                    col_a, col_b = st.columns(2)
+                    if col_a.button("✅ Aprobar y publicar en todas las materias", key=f"aprobar_{ap['id']}", type="primary"):
+                        try:
+                            creds = classroom.obtener_credenciales()
+                            editado = mensaje_editado_fp if mensaje_editado_fp != datos.get("mensaje", "") else None
+                            ok, mensaje = agente_publicador.aprobar_y_publicar_global(ap["id"], creds, editado)
                             if ok:
                                 st.success(mensaje)
                                 st.rerun()

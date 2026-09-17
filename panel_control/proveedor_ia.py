@@ -4,20 +4,22 @@ Soporta un modelo LOCAL (Ollama, sin costo ni límite de cuota), DeepSeek
 (pago por uso), Gemini (con cuota gratis limitada), Groq (free tier
 gratis y generoso, corre modelos Llama grandes a máxima velocidad),
 OpenRouter (router con varios modelos gratis, entre ellos Kimi K2),
-NVIDIA NIM (free tier propio, 100+ modelos open-weight) y Mistral (plan
-Experiment gratis, límites bajos — pensado como último respaldo antes
-del local), con fallback automático: si uno falla (sin API key, sin
-cuota, servidor caído), prueba con el siguiente. Así los agentes no
-dependen de un solo proveedor.
+NVIDIA NIM (free tier propio, 100+ modelos open-weight), Mistral (plan
+Experiment gratis, límites bajos) y Cline (cuenta personal, modelo fijo
+marcado "Free" en su catálogo — otro balde de cuota gratis, aparte de
+todos los anteriores), con fallback automático: si uno falla (sin API
+key, sin cuota, servidor caído), prueba con el siguiente. Así los
+agentes no dependen de un solo proveedor.
 
 Orden por defecto: DeepSeek y Gemini primero (mejor calidad de
 redacción), Groq/OpenRouter/NVIDIA como respaldos gratis con buena
-cuota, Mistral después (cuota más chica), y el local al final como
-última red de emergencia — si se agota la cuota de todos o no hay
-internet, sigue funcionando igual, aunque la redacción sea más floja (es
-un modelo chico, 3B, para que ande bien en esta compu).
+cuota, Mistral y Cline después (cuota más chica/menos probados), y el
+local al final como última red de emergencia — si se agota la cuota de
+todos o no hay internet, sigue funcionando igual, aunque la redacción
+sea más floja (es un modelo chico, 3B, para que ande bien en esta
+compu).
 Se puede cambiar con la variable de entorno
-IA_PROVEEDOR_ORDEN="local,gemini,deepseek,groq,openrouter,nvidia,mistral".
+IA_PROVEEDOR_ORDEN="local,gemini,deepseek,groq,openrouter,nvidia,mistral,cline".
 """
 import os
 import time
@@ -28,7 +30,7 @@ from openai import OpenAI
 
 load_dotenv()
 
-ORDEN_POR_DEFECTO = ["deepseek", "gemini", "groq", "openrouter", "nvidia", "mistral", "local"]
+ORDEN_POR_DEFECTO = ["deepseek", "gemini", "groq", "openrouter", "nvidia", "mistral", "cline", "local"]
 
 OLLAMA_URL = os.environ.get("OLLAMA_URL", "http://localhost:11434/v1")
 OLLAMA_MODELO = os.environ.get("OLLAMA_MODELO", "llama3.2:3b")
@@ -158,6 +160,38 @@ def _generar_mistral(prompt, modelo=None):
     return respuesta.choices[0].message.content
 
 
+def _generar_cline(prompt, modelo=None):
+    """Cline (cuenta personal vía app.cline.bot). Su API NO es compatible
+    con el cliente openai (envuelve la respuesta en {"data": {...}} en vez
+    de la forma plana esperada), así que acá se llama directo por HTTP.
+
+    Fijo el modelo a uno de su catálogo con sufijo ":free" (gratis siempre,
+    para cualquier cuenta, a diferencia de los modelos marcados "Free" en
+    el selector de VS Code — esos SOLO andan desde la extensión/IDE, no
+    por esta API; lo confirmé probándolo: devuelven 403 "only available
+    via Cline product surfaces"). Esta cuenta no tiene tarjeta cargada,
+    pero si algún día se le agregara, un modelo sin ":free" acá consumiría
+    el saldo de créditos.
+    Conseguí la key en https://app.cline.bot/dashboard y ponela en .env
+    como CLINE_API_KEY."""
+    api_key = os.environ.get("CLINE_API_KEY")
+    if not api_key:
+        raise RuntimeError("Falta CLINE_API_KEY en el .env")
+    import requests
+    resp = requests.post(
+        "https://api.cline.bot/api/v1/chat/completions",
+        headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
+        json={
+            "model": modelo or os.environ.get("CLINE_MODELO", "google/gemma-4-26b-a4b-it:free"),
+            "messages": [{"role": "user", "content": prompt}],
+        },
+        timeout=60,
+    )
+    if resp.status_code != 200:
+        raise RuntimeError(f"Cline devolvió {resp.status_code}: {resp.text[:300]}")
+    return resp.json()["data"]["choices"][0]["message"]["content"]
+
+
 _PROVEEDORES = {
     "local": _generar_local,
     "deepseek": _generar_deepseek,
@@ -166,6 +200,7 @@ _PROVEEDORES = {
     "openrouter": _generar_openrouter,
     "nvidia": _generar_nvidia,
     "mistral": _generar_mistral,
+    "cline": _generar_cline,
 }
 
 

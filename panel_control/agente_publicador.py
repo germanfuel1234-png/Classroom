@@ -185,13 +185,50 @@ def rechazar(aprobacion_id):
     return True, "Rechazada."
 
 
-def _leer_materials_actuales(service, course_id, work_id):
-    """Trae los materials tal cual están HOY en Classroom para esa
-    actividad. Hace falta porque courseWork().patch(updateMask="materials")
-    reemplaza el array entero — si no se leen los actuales primero y se
-    reenvían junto con los nuevos, se pierden los adjuntos que ya tenía."""
-    actividad = service.courses().courseWork().get(courseId=course_id, id=work_id).execute()
-    return actividad.get("materials", [])
+def aprobar_y_publicar_global(aprobacion_id, creds, mensaje_editado=None):
+    """Se llama desde el panel al aprobar un anuncio de tipo 'anuncio_global'
+    (Agente Fechas Patrias): publica el MISMO texto como anuncio en TODAS
+    las materias activas, una sola aprobación para todas. Sigue de largo si
+    una materia puntual falla (no aborta el resto por un error aislado).
+    Devuelve (ok, mensaje) con el resumen de cuántas salieron bien."""
+    ap = memoria.obtener_aprobacion(aprobacion_id)
+    if not ap:
+        return False, "No se encontró esa aprobación."
+    if ap["estado"] != "pendiente":
+        return False, "Esta aprobación ya fue resuelta."
+
+    texto = mensaje_editado if mensaje_editado is not None else ap["datos"]["mensaje"]
+    service = build("classroom", "v1", credentials=creds)
+    cursos = classroom.listar_materias_activas(service)
+    if not cursos:
+        return False, "No se encontraron materias activas."
+
+    ok_materias, fallidas = [], []
+    for curso in cursos:
+        try:
+            service.courses().announcements().create(
+                courseId=curso["id"], body={"text": texto, "state": "PUBLISHED"},
+            ).execute()
+            ok_materias.append(curso.get("name", curso["id"]))
+        except Exception as e:
+            fallidas.append(f"{curso.get('name', curso['id'])}: {str(e)[:100]}")
+
+    memoria.resolver_aprobacion(aprobacion_id, estado="aprobada", tarea_estado="completada",
+                                 texto_final=texto if mensaje_editado is not None else None)
+    memoria.agregar_memoria(
+        "anuncio_global", clave=ap["datos"]["nombre_fecha"], valor=f"{len(ok_materias)} materia(s)",
+        agente=AGENTE,
+    )
+    resumen = f"Publicado en {len(ok_materias)} de {len(cursos)} materia(s)."
+    if fallidas:
+        resumen += " Fallaron: " + "; ".join(fallidas)
+    return len(ok_materias) > 0, resumen
+
+
+def _url_actividad_classroom(course_id, work_id):
+    """Link directo a la actividad en la vista del profesor — para que
+    quede a un click de distancia cuando hay que adjuntar algo a mano."""
+    return f"https://classroom.google.com/c/{course_id}/a/{work_id}/details"
 
 
 def crear_borrador_adjuntar_bibliografia(nombre_materia, course_id, work_id, titulo_actividad, recursos):
@@ -210,10 +247,14 @@ def crear_borrador_adjuntar_bibliografia(nombre_materia, course_id, work_id, tit
     return aprobacion_id
 
 
-def aprobar_y_adjuntar_bibliografia(aprobacion_id, creds, recursos_confirmados):
-    """Se llama desde el panel al aprobar: recién acá se suman los
-    recursos de verdad en Classroom, sin perder los materials que ya
-    tenía la actividad. Devuelve (ok, mensaje)."""
+def aprobar_y_adjuntar_bibliografia(aprobacion_id, recursos_confirmados):
+    """Se llama desde el panel al aprobar. La API de Classroom NO permite
+    modificar los materials de una actividad ya publicada (confirmado
+    contra el discovery document oficial: 'materials' no está entre los
+    campos editables de courseWork.patch ni de courseWorkMaterials.patch)
+    — así que no se intenta ningún cambio automático. Esto solo confirma
+    la lista de recursos y deja lista la info para que el profesor los
+    adjunte a mano en un click. Devuelve (ok, mensaje)."""
     ap = memoria.obtener_aprobacion(aprobacion_id)
     if not ap:
         return False, "No se encontró esa aprobación."
@@ -221,26 +262,20 @@ def aprobar_y_adjuntar_bibliografia(aprobacion_id, creds, recursos_confirmados):
         return False, "Esta aprobación ya fue resuelta."
 
     datos = ap["datos"]
-    service = build("classroom", "v1", credentials=creds)
-    try:
-        materials_actuales = _leer_materials_actuales(service, datos["course_id"], datos["work_id"])
-        nuevos = [_material_desde_recurso(r) for r in (recursos_confirmados or [])]
-        service.courses().courseWork().patch(
-            courseId=datos["course_id"], id=datos["work_id"],
-            updateMask="materials",
-            body={"materials": materials_actuales + nuevos},
-        ).execute()
-    except HttpError as e:
-        return False, f"Classroom rechazó el cambio: {str(e)[:200]}"
-    except Exception as e:
-        return False, f"No se pudo adjuntar: {str(e)[:200]}"
+    nuevos = recursos_confirmados or []
+    url_actividad = _url_actividad_classroom(datos["course_id"], datos["work_id"])
 
     memoria.resolver_aprobacion(aprobacion_id, estado="aprobada", tarea_estado="completada")
     memoria.agregar_memoria(
-        "bibliografia_adjuntada", clave=datos["titulo_actividad"], valor=f"{len(nuevos)} recurso(s) adjuntado(s)",
+        "bibliografia_confirmada", clave=datos["titulo_actividad"], valor=f"{len(nuevos)} recurso(s) confirmado(s)",
         curso=datos["materia"], agente=AGENTE,
     )
-    return True, f"Listo, se adjuntaron {len(nuevos)} recurso(s) a '{datos['titulo_actividad']}' en Classroom."
+    enlaces = "\n".join(f"- {r.get('titulo', r.get('url'))}: {r.get('url', '')}" for r in nuevos)
+    return True, (
+        f"Confirmado. Classroom no deja adjuntar materiales por API a una actividad ya publicada, "
+        f"así que falta el último paso a mano: abrí la actividad ({url_actividad}) → Editar → "
+        f"agregá estos {len(nuevos)} enlace(s) como material:\n{enlaces}"
+    )
 
 
 def _subir_archivo_a_drive(service_drive, nombre_archivo, contenido, tipo_mime):
@@ -273,10 +308,13 @@ def crear_borrador_reemplazo_material(nombre_materia, course_id, work_id, titulo
 
 
 def aprobar_y_reemplazar_material(aprobacion_id, creds):
-    """Se llama desde el panel al aprobar: sube el archivo a Drive, lo
-    adjunta a la actividad y saca los adjuntos tipo archivo que hubiera
-    antes (los links/videos ya adjuntos quedan intactos). Devuelve
-    (ok, mensaje)."""
+    """Se llama desde el panel al aprobar. La API de Classroom no deja
+    tocar los materials de una actividad ya publicada (ver nota en
+    aprobar_y_adjuntar_bibliografia), así que este paso hace lo único
+    que sí es automatizable — subir el archivo mejorado al Drive del
+    profesor, ya compartido y listo para elegir — y deja el resto
+    (sacar el archivo viejo, adjuntar el nuevo desde Drive) como un
+    click manual en Classroom. Devuelve (ok, mensaje)."""
     ap = memoria.obtener_aprobacion(aprobacion_id)
     if not ap:
         return False, "No se encontró esa aprobación."
@@ -288,31 +326,28 @@ def aprobar_y_reemplazar_material(aprobacion_id, creds):
     if not archivo:
         return False, "El archivo local ya no existe (¿lo borraste?)."
 
-    service = build("classroom", "v1", credentials=creds)
     service_drive = build("drive", "v3", credentials=creds)
     try:
-        nuevo_id_drive = _subir_archivo_a_drive(
+        _subir_archivo_a_drive(
             service_drive, archivo["nombre_archivo"], archivo["contenido"], archivo["tipo_mime"]
         )
-        materials_actuales = _leer_materials_actuales(service, datos["course_id"], datos["work_id"])
-        materials_sin_archivos_viejos = [m for m in materials_actuales if "driveFile" not in m]
-        nuevo_material = {"driveFile": {"driveFile": {"id": nuevo_id_drive}, "shareMode": "VIEW"}}
-        service.courses().courseWork().patch(
-            courseId=datos["course_id"], id=datos["work_id"],
-            updateMask="materials",
-            body={"materials": materials_sin_archivos_viejos + [nuevo_material]},
-        ).execute()
     except HttpError as e:
-        return False, f"Classroom rechazó el cambio: {str(e)[:200]}"
+        return False, f"No se pudo subir el archivo a Drive: {str(e)[:200]}"
     except Exception as e:
-        return False, f"No se pudo subir/adjuntar: {str(e)[:200]}"
+        return False, f"No se pudo subir el archivo a Drive: {str(e)[:200]}"
 
+    url_actividad = _url_actividad_classroom(datos["course_id"], datos["work_id"])
     memoria.resolver_aprobacion(aprobacion_id, estado="aprobada", tarea_estado="completada")
     memoria.agregar_memoria(
-        "material_reemplazado", clave=datos["titulo_actividad"], valor=archivo["nombre_archivo"],
+        "material_subido_a_drive", clave=datos["titulo_actividad"], valor=archivo["nombre_archivo"],
         curso=datos["materia"], agente=AGENTE,
     )
-    return True, f"Listo, se reemplazó el archivo de '{datos['titulo_actividad']}' en Classroom."
+    return True, (
+        f"'{archivo['nombre_archivo']}' ya está en tu Drive, listo para elegir. Classroom no deja "
+        f"reemplazar materiales por API, así que falta el último paso a mano: abrí la actividad "
+        f"({url_actividad}) → Editar → sacá el archivo viejo → Agregar → Drive → buscá "
+        f"'{archivo['nombre_archivo']}'."
+    )
 
 
 def menu():

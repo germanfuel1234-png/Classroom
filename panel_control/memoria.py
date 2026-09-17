@@ -159,6 +159,12 @@ def init_db():
                 actualizado_en TEXT NOT NULL
             );
 
+            CREATE TABLE IF NOT EXISTS fechas_patrias_generadas (
+                fecha_iso TEXT PRIMARY KEY,
+                clave TEXT NOT NULL,
+                generado_en TEXT NOT NULL
+            );
+
             CREATE TABLE IF NOT EXISTS comunicados (
                 id INTEGER PRIMARY KEY,
                 anio_lectivo_id INTEGER NOT NULL REFERENCES anios_lectivos(id),
@@ -635,6 +641,22 @@ def resolver_aprobacion(aprobacion_id: int, estado: str, tarea_estado: str, text
             )
             tarea_id = con.execute("SELECT tarea_id FROM aprobaciones WHERE id = ?", (aprobacion_id,)).fetchone()["tarea_id"]
     actualizar_estado_tarea(tarea_id, tarea_estado)
+
+
+def ya_se_genero_fecha_patria(fecha_iso: str) -> bool:
+    with conexion() as con:
+        fila = con.execute(
+            "SELECT 1 FROM fechas_patrias_generadas WHERE fecha_iso = ?", (fecha_iso,)
+        ).fetchone()
+    return fila is not None
+
+
+def marcar_fecha_patria_generada(fecha_iso: str, clave: str):
+    with conexion() as con:
+        con.execute(
+            "INSERT OR IGNORE INTO fechas_patrias_generadas (fecha_iso, clave, generado_en) VALUES (?, ?, ?)",
+            (fecha_iso, clave, datetime.now().isoformat(timespec="seconds")),
+        )
 
 
 def set_directiva(texto: str):

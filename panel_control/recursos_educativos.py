@@ -18,6 +18,10 @@ y el "título" que da la API es solo el dominio (ej. "youtube.com"), no un
 título descriptivo de la página — por eso acá se resuelve el redirect a la
 URL real (para poder detectar YouTube/manuales y armar un link limpio) y
 el título que se guarda es honesto y simple, no uno inventado.
+
+El texto exacto que se le manda a Gemini (y qué datos recibe antes de
+buscar) vive en panel_control/prompts/busqueda_bibliografia.md, no acá —
+así se puede ajustar qué se le pide sin tocar este código.
 """
 import os
 import re
@@ -29,6 +33,20 @@ from google import genai
 from google.genai import types
 
 load_dotenv()
+
+RUTA_PROMPT = os.path.join(os.path.dirname(__file__), "prompts", "busqueda_bibliografia.md")
+
+
+def _cargar_plantilla_prompt() -> str:
+    """Lee el prompt real desde el .md (entre las marcas PROMPT:INICIO/FIN)
+    en vez de tenerlo fijo en este archivo — así se puede editar QUÉ se le
+    pide a Gemini sin tocar código Python."""
+    with open(RUTA_PROMPT, encoding="utf-8") as f:
+        contenido = f.read()
+    match = re.search(r"<!-- PROMPT:INICIO -->\s*(.*?)\s*<!-- PROMPT:FIN -->", contenido, re.DOTALL)
+    if not match:
+        raise RuntimeError(f"No encontré el bloque PROMPT:INICIO/FIN en {RUTA_PROMPT}")
+    return match.group(1)
 
 _DOMINIOS_MANUAL = (
     "docs.python.org", "cplusplus.com", "cppreference.com", "developer.mozilla.org",
@@ -74,16 +92,7 @@ def buscar_recursos(nombre_materia: str, tema: str) -> list[dict]:
     if not api_key:
         raise RuntimeError("Falta GEMINI_API_KEY en el .env — sin Gemini no hay forma de buscar recursos reales.")
 
-    prompt = (
-        f"Sos un profesor de una escuela técnica secundaria armando un Trabajo Práctico "
-        f"de la materia \"{nombre_materia}\" sobre el tema: \"{tema}\".\n\n"
-        "Buscá en internet (no respondas de memoria) y encontrá:\n"
-        "1. Una fuente bibliográfica confiable sobre el tema.\n"
-        "2. Uno o dos videos de YouTube en español que expliquen el tema con claridad.\n"
-        "3. Si el tema es de programación o tiene documentación oficial (ej. un lenguaje "
-        "como C++ o Python), un manual o documentación oficial de referencia. Si el tema "
-        "no tiene un manual oficial aplicable, omitilo.\n"
-    )
+    prompt = _cargar_plantilla_prompt().format(materia=nombre_materia, tema=tema)
 
     client = genai.Client(api_key=api_key)
     config = types.GenerateContentConfig(tools=[types.Tool(google_search=types.GoogleSearch())])
