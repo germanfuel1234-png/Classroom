@@ -165,6 +165,13 @@ def init_db():
                 generado_en TEXT NOT NULL
             );
 
+            CREATE TABLE IF NOT EXISTS chat_director (
+                id INTEGER PRIMARY KEY,
+                rol TEXT NOT NULL,
+                mensaje TEXT NOT NULL,
+                creado_en TEXT NOT NULL
+            );
+
             CREATE TABLE IF NOT EXISTS comunicados (
                 id INTEGER PRIMARY KEY,
                 anio_lectivo_id INTEGER NOT NULL REFERENCES anios_lectivos(id),
@@ -657,6 +664,22 @@ def marcar_fecha_patria_generada(fecha_iso: str, clave: str):
             "INSERT OR IGNORE INTO fechas_patrias_generadas (fecha_iso, clave, generado_en) VALUES (?, ?, ?)",
             (fecha_iso, clave, datetime.now().isoformat(timespec="seconds")),
         )
+
+
+def agregar_mensaje_chat_director(rol: str, mensaje: str):
+    with conexion() as con:
+        con.execute(
+            "INSERT INTO chat_director (rol, mensaje, creado_en) VALUES (?, ?, ?)",
+            (rol, mensaje, datetime.now().isoformat(timespec="seconds")),
+        )
+
+
+def listar_chat_director(limite: int = 50):
+    with conexion() as con:
+        filas = con.execute(
+            "SELECT * FROM chat_director ORDER BY id DESC LIMIT ?", (limite,)
+        ).fetchall()
+    return [dict(f) for f in reversed(filas)]
 
 
 def set_directiva(texto: str):

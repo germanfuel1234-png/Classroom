@@ -76,6 +76,39 @@ def generar_supervision():
     return proveedor_ia.generar_texto(prompt)
 
 
+def preguntar(pregunta: str):
+    """Chat directo profesor <-> Director, en Canal IA. A diferencia de
+    publicar_supervision() (resumen que el Director escribe solo), acá el
+    profesor pregunta algo puntual y el Director responde con el mismo
+    contexto real (riesgos + tareas recientes) que usa para el resumen.
+    Persiste ambos mensajes en memoria.chat_director. Devuelve el texto
+    de la respuesta."""
+    memoria.agregar_mensaje_chat_director("profesor", pregunta)
+
+    riesgos = _calcular_riesgos()
+    tareas_recientes = memoria.listar_tareas(limite=LIMITE_TAREAS_RECIENTES)
+    lineas_tareas = "\n".join(
+        f"- {t['agente_nombre']}: {t['descripcion']}" for t in tareas_recientes
+    ) or "(sin actividad reciente)"
+    lineas_riesgos = "\n".join(f"- {r}" for r in riesgos) or "(sin riesgos detectados)"
+
+    prompt = (
+        "Sos el Director, un agente que supervisa un panel de agentes de IA para un "
+        "profesor de una escuela técnica secundaria en Classroom. Tu rol es leer el "
+        "estado real del proyecto (actividad reciente y riesgos) y responder preguntas "
+        "del profesor sobre qué hace cada parte del sistema o cómo viene la situación. "
+        "Nunca ejecutás ni publicás nada vos mismo, solo informás.\n\n"
+        f"Actividad reciente:\n{lineas_tareas}\n\n"
+        f"Riesgos detectados:\n{lineas_riesgos}\n\n"
+        f"El profesor te pregunta: \"{pregunta}\"\n\n"
+        "Respondé directo y breve, en español, como si le hablaras al profesor."
+    )
+
+    texto, _ = proveedor_ia.generar_texto(prompt)
+    memoria.agregar_mensaje_chat_director("director", texto)
+    return texto
+
+
 def publicar_supervision():
     """Genera el resumen y lo deja publicado en el canal (tabla `tareas`,
     agente='Director'). Devuelve (texto, proveedor)."""

@@ -263,6 +263,24 @@ if pagina_actual == "canal":
                 partes_caption.append(t["estado"])
                 st.caption(" · ".join(partes_caption))
 
+    st.divider()
+    st.subheader("💬 Preguntale al Director")
+    st.caption(
+        "Charla directa y privada con el Director — preguntale de qué se encarga, cómo viene "
+        "la situación, o cualquier duda sobre el proyecto. Queda guardada acá."
+    )
+    for m in memoria.listar_chat_director(limite=50):
+        avatar_msg = "🧑‍🏫" if m["rol"] == "profesor" else icono_agente("Director")
+        with st.chat_message(name=m["rol"], avatar=avatar_msg):
+            st.write(m["mensaje"])
+    pregunta_director = st.chat_input("Preguntale algo al Director...")
+    if pregunta_director:
+        try:
+            agente_director.preguntar(pregunta_director)
+        except Exception as e:
+            st.error(mensaje_error_amigable(e))
+        st.rerun()
+
 elif pagina_actual == "centro":
     with st.expander("❓ ¿Cómo uso esta sección?"):
         st.markdown(
